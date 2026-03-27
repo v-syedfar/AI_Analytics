@@ -7,9 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'pi-planning-intelligence'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'planning_intelligence'
   PYTHON_VERSION: '3.13'
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -19,41 +18,41 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v5.4.0
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Create and start virtual environment
+      - name: Debug repository structure
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          pwd
+          ls -la
+          ls -la ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
-      - name: Install dependencies
+      - name: Validate requirements
         run: |
-          pushd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
-          popd
 
       - name: Zip artifact for deployment
         run: |
-          pushd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           zip -r ../release.zip . \
-            --exclude "tests/*" \
-            --exclude "__pycache__/*" \
-            --exclude "*.pyc" \
-            --exclude "local.settings.json"
-          popd
+            -x "tests/*" \
+            -x "__pycache__/*" \
+            -x "*.pyc" \
+            -x "local.settings.json" \
+            -x "venv/*" \
+            -x ".venv/*"
 
-      - name: Upload artifact for deployment job
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            release.zip
-            !venv/
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,20 +61,15 @@ jobs:
       contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: python-app
-
-      - name: Unzip artifact for deployment
-        run: |
-          unzip release.zip -d deploy
-          rm release.zip
 
       - name: Deploy to Azure Functions
         uses: Azure/functions-action@v1
         with:
           app-name: 'pi-planning-intelligence'
           slot-name: 'Production'
-          package: deploy
+          package: release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
