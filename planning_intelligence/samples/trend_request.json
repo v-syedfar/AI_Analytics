@@ -1,0 +1,41 @@
+{
+  "query_type": "trend_analysis",
+  "location_id": "LOC001",
+  "material_group": "PUMP",
+  "recurring_threshold": 3,
+  "snapshots": [
+    {
+      "snapshot_date": "2026-03-01",
+      "rows": [
+        {
+          "LOCID": "LOC001", "GSCEQUIPCAT": "PUMP", "PRDID": "MAT-100",
+          "LOCFR": "SUP-A", "GSCFSCTQTY": 50, "GSCCONROJDATE": "2026-06-01",
+          "ZCOIBODVER": "v1", "ZCOIFORMFACT": "FF-A",
+          "LASTMODIFIEDBY": "user1", "LASTMODIFIEDDATE": "2026-02-28"
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-03-08",
+      "rows": [
+        {
+          "LOCID": "LOC001", "GSCEQUIPCAT": "PUMP", "PRDID": "MAT-100",
+          "LOCFR": "SUP-A", "GSCFSCTQTY": 80, "GSCCONROJDATE": "2026-06-01",
+          "ZCOIBODVER": "v1", "ZCOIFORMFACT": "FF-A",
+          "LASTMODIFIEDBY": "user2", "LASTMODIFIEDDATE": "2026-03-07"
+        }
+      ]
+    },
+    {
+      "snapshot_date": "2026-03-15",
+      "rows": [
+        {
+          "LOCID": "LOC001", "GSCEQUIPCAT": "PUMP", "PRDID": "MAT-100",
+          "LOCFR": "SUP-A", "GSCFSCTQTY": 120, "GSCCONROJDATE": "2026-06-15",
+          "ZCOIBODVER": "v2", "ZCOIFORMFACT": "FF-A",
+          "LASTMODIFIEDBY": "user2", "LASTMODIFIEDDATE": "2026-03-14"
+        }
+      ]
+    }
+  ]
+}

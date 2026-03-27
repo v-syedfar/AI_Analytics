@@ -1,0 +1,92 @@
+{
+  "total_available_records": 2,
+  "changed_record_count": 1,
+  "unchanged_record_count": 1,
+
+  "changed_material_ids": ["MAT-100"],
+
+  "changes_by_location": [
+    { "location_id": "LOC001", "change_count": 1 }
+  ],
+
+  "changes_by_material_group": [
+    { "material_group": "PUMP", "change_count": 1 }
+  ],
+
+  "change_driver_summary": {
+    "quantity_driven": 1,
+    "supplier_driven": 0,
+    "design_driven": 1,
+    "roj_driven": 1
+  },
+
+  "change_type_summary": {
+    "Qty + ROJ + Design": 1
+  },
+
+  "high_risk_records": [
+    {
+      "location_id": "LOC001",
+      "material_group": "PUMP",
+      "material_id": "MAT-100",
+      "supplier_current": "SUP-A",
+      "supplier_previous": "SUP-A",
+      "forecast_qty_current": 120.0,
+      "forecast_qty_previous": 50.0,
+      "roj_current": "2026-07-01",
+      "roj_previous": "2026-06-01",
+      "bod_current": "v3",
+      "bod_previous": "v2",
+      "ff_current": "FF-B",
+      "ff_previous": "FF-A",
+      "roc_region": "EMEA",
+      "dc_site": "DC-WEST",
+      "metro": "METRO-1",
+      "country": "US",
+      "supplier_date": "2026-06-15",
+      "planning_exception": null,
+      "roj_reason_code": "DEMAND_SPIKE",
+      "automation_reason": null,
+      "qty_changed": true,
+      "roj_changed": true,
+      "supplier_changed": false,
+      "design_changed": true,
+      "qty_delta": 70.0,
+      "change_type": "Qty + ROJ + Design",
+      "risk_level": "Design Change Risk"
+    }
+  ],
+
+  "changed_records": [
+    {
+      "location_id": "LOC001",
+      "material_group": "PUMP",
+      "material_id": "MAT-100",
+      "supplier_current": "SUP-A",
+      "supplier_previous": "SUP-A",
+      "forecast_qty_current": 120.0,
+      "forecast_qty_previous": 50.0,
+      "roj_current": "2026-07-01",
+      "roj_previous": "2026-06-01",
+      "bod_current": "v3",
+      "bod_previous": "v2",
+      "ff_current": "FF-B",
+      "ff_previous": "FF-A",
+      "roc_region": "EMEA",
+      "dc_site": "DC-WEST",
+      "metro": "METRO-1",
+      "country": "US",
+      "supplier_date": "2026-06-15",
+      "planning_exception": null,
+      "roj_reason_code": "DEMAND_SPIKE",
+      "automation_reason": null,
+      "qty_changed": true,
+      "roj_changed": true,
+      "supplier_changed": false,
+      "design_changed": true,
+      "qty_delta": 70.0,
+      "change_type": "Qty + ROJ + Design",
+      "risk_level": "Design Change Risk"
+    }
+  ]
+}

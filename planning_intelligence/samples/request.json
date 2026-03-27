@@ -1,0 +1,79 @@
+{
+  "query_type": "summary",
+  "location_id": "LOC001",
+  "material_group": "PUMP",
+  "current_rows": [
+    {
+      "ROC": "EMEA",
+      "LOCID": "LOC001",
+      "PRDID": "MAT-100",
+      "GSCEQUIPCAT": "PUMP",
+      "LOCFR": "SUP-A",
+      "LOCFRDESCR": "Supplier Alpha",
+      "GSCFSCTQTY": 120,
+      "GSCCONROJDATE": "2026-07-01",
+      "ZCOIBODVER": "v3",
+      "ZCOIFORMFACT": "FF-B",
+      "ZCOIDCID": "DC-WEST",
+      "ZCOIMETROID": "METRO-1",
+      "ZCOICOUNTRY": "US",
+      "GSCSUPLDATE": "2026-06-15",
+      "ZGSCPLANNINGEXCEPTION": null,
+      "ZGSCROJDATEREASONCODE": "DEMAND_SPIKE",
+      "ZGSCAUTOMATIONREASON": null
+    },
+    {
+      "ROC": "EMEA",
+      "LOCID": "LOC001",
+      "PRDID": "MAT-101",
+      "GSCEQUIPCAT": "PUMP",
+      "LOCFR": "SUP-B",
+      "LOCFRDESCR": "Supplier Beta",
+      "GSCFSCTQTY": 50,
+      "GSCCONROJDATE": "2026-06-15",
+      "ZCOIBODVER": "v1",
+      "ZCOIFORMFACT": "FF-A",
+      "ZCOIDCID": "DC-WEST",
+      "ZCOIMETROID": "METRO-1",
+      "ZCOICOUNTRY": "US",
+      "GSCSUPLDATE": "2026-06-10",
+      "ZGSCPLANNINGEXCEPTION": null,
+      "ZGSCROJDATEREASONCODE": null,
+      "ZGSCAUTOMATIONREASON": null
+    }
+  ],
+  "previous_rows": [
+    {
+      "ROC": "EMEA",
+      "LOCID": "LOC001",
+      "PRDID": "MAT-100",
+      "GSCEQUIPCAT": "PUMP",
+      "LOCFR": "SUP-A",
+      "LOCFRDESCR": "Supplier Alpha",
+      "GSCPREVFCSTQTY": 50,
+      "GSCPREVROJNBD": "2026-06-01",
+      "ZCOIBODVER": "v2",
+      "ZCOIFORMFACT": "FF-A",
+      "ZCOIDCID": "DC-WEST",
+      "ZCOIMETROID": "METRO-1",
+      "ZCOICOUNTRY": "US",
+      "GSCPREVSUPLDATE": "2026-05-20"
+    },
+    {
+      "ROC": "EMEA",
+      "LOCID": "LOC001",
+      "PRDID": "MAT-101",
+      "GSCEQUIPCAT": "PUMP",
+      "LOCFR": "SUP-B",
+      "LOCFRDESCR": "Supplier Beta",
+      "GSCPREVFCSTQTY": 50,
+      "GSCPREVROJNBD": "2026-06-15",
+      "ZCOIBODVER": "v1",
+      "ZCOIFORMFACT": "FF-A",
+      "ZCOIDCID": "DC-WEST",
+      "ZCOIMETROID": "METRO-1",
+      "ZCOICOUNTRY": "US",
+      "GSCPREVSUPLDATE": "2026-06-10"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+import React from "react";
+
+export default function RootCauseCard({ rootCause }) {
+  return (
+    <div className="bg-card border border-border rounded-2xl p-6">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-accent-yellow">⚑</span>
+        <p className="text-xs uppercase tracking-widest text-gray-400">Why Trend Changed</p>
+      </div>
+      <p className="text-sm text-gray-300 leading-relaxed">
+        {rootCause || "Root cause analysis not available."}
+      </p>
+    </div>
+  );
+}
