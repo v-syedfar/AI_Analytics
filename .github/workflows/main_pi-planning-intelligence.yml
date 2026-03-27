@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'planning_intelligence'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'pi-planning-intelligence'
   PYTHON_VERSION: '3.12'
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -24,10 +24,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install dependencies
-        run: pip install -r planning_intelligence/requirements.txt
+        run: pip install -r pi-planning-intelligence/requirements.txt
 
       - name: Zip artifact
-        run: zip -r release.zip planning_intelligence
+        run: zip -r release.zip pi-planning-intelligence
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
