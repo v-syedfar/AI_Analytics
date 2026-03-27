@@ -9,6 +9,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'planning_intelligence'
   PYTHON_VERSION: '3.13'
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -18,35 +19,30 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.4.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Debug repository structure
+      - name: Install dependencies
         run: |
-          pwd
-          ls -la
-          ls -la ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-
-      - name: Validate requirements
-        run: |
-          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          python -m pip install --upgrade pip
+          pushd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           pip install -r requirements.txt
+          popd
 
       - name: Zip artifact for deployment
         run: |
-          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          pushd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           zip -r ../release.zip . \
-            -x "tests/*" \
-            -x "__pycache__/*" \
-            -x "*.pyc" \
-            -x "local.settings.json" \
-            -x "venv/*" \
-            -x ".venv/*"
+            --exclude "tests/*" \
+            --exclude "__pycache__/*" \
+            --exclude "*.pyc" \
+            --exclude "local.settings.json" \
+            --exclude "venv/*" \
+            --exclude ".venv/*"
+          popd
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -66,10 +62,15 @@ jobs:
         with:
           name: python-app
 
+      - name: Unzip artifact
+        run: |
+          unzip release.zip -d deploy
+          rm release.zip
+
       - name: Deploy to Azure Functions
         uses: Azure/functions-action@v1
         with:
           app-name: 'pi-planning-intelligence'
           slot-name: 'Production'
-          package: release.zip
+          package: deploy
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
