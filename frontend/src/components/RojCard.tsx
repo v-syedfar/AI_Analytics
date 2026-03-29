@@ -1,5 +1,5 @@
 import React from "react";
-import { RojDetail } from "../types/dashboard";
+import { RojDetail } from "../types/dashboard.tsx";
 
 interface Props { rojSummary: { status: string; changedCount: number; details: RojDetail[] }; }
 
@@ -25,3 +25,7 @@ export const RojCard: React.FC<Props> = ({ rojSummary }) => (
     }
   </div>
 );
+
+
+
+

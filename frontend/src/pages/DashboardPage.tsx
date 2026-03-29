@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { DashboardResponse, DataMode } from "../types/dashboard";
-import { fetchDashboard } from "../services/api";
+import { DashboardResponse, DataMode } from "../types/dashboard.tsx";
+import { fetchDashboard } from "../services/api.ts";
 
-import { AlertBanner } from "../components/AlertBanner";
-import { PlanningHealthCard } from "../components/PlanningHealthCard";
-import { ForecastCard } from "../components/ForecastCard";
-import { TrendCard } from "../components/TrendCard";
-import { SummaryTiles } from "../components/SummaryTiles";
-import { AIInsightCard } from "../components/AIInsightCard";
-import { RootCauseCard } from "../components/RootCauseCard";
-import { RiskCard } from "../components/RiskCard";
-import { ActionsPanel } from "../components/ActionsPanel";
-import { DatacenterCard } from "../components/DatacenterCard";
-import { MaterialGroupCard } from "../components/MaterialGroupCard";
-import { SupplierCard } from "../components/SupplierCard";
-import { DesignCard } from "../components/DesignCard";
-import { RojCard } from "../components/RojCard";
+import { AlertBanner } from "../components/AlertBanner.tsx";
+import { PlanningHealthCard } from "../components/PlanningHealthCard.tsx";
+import { ForecastCard } from "../components/ForecastCard.tsx";
+import { TrendCard } from "../components/TrendCard.tsx";
+import { SummaryTiles } from "../components/SummaryTiles.tsx";
+import { AIInsightCard } from "../components/AIInsightCard.tsx";
+import { RootCauseCard } from "../components/RootCauseCard.tsx";
+import { RiskCard } from "../components/RiskCard.tsx";
+import { ActionsPanel } from "../components/ActionsPanel.tsx";
+import { DatacenterCard } from "../components/DatacenterCard.tsx";
+import { MaterialGroupCard } from "../components/MaterialGroupCard.tsx";
+import { SupplierCard } from "../components/SupplierCard.tsx";
+import { DesignCard } from "../components/DesignCard.tsx";
+import { RojCard } from "../components/RojCard.tsx";
 
 const USE_MOCK = process.env.REACT_APP_USE_MOCK !== "false";
 
@@ -154,3 +154,8 @@ export const DashboardPage: React.FC = () => {
     </div>
   );
 };
+
+
+
+
+

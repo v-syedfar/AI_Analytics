@@ -10,5 +10,6 @@ local.settings.json
 node_modules/
 dashboard_ui/node_modules/
 dashboard_ui/.env
+frontend/.env
 build/
 dist/
