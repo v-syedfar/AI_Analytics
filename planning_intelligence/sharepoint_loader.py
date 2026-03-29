@@ -1,26 +1,29 @@
 """
-Azure Blob Storage Loader
-Uses Managed Identity to download current.xlsx and previous.xlsx from Azure Blob Storage,
-and returns normalized row dicts ready for the analytics pipeline.
+SharePoint Loader
+Authenticates to SharePoint via Azure AD app credentials,
+downloads current.xlsx and previous.xlsx, and returns
+normalized row dicts ready for the analytics pipeline.
 
 Required environment variables:
-  AZURE_STORAGE_ACCOUNT      e.g. mystorageaccount
-  AZURE_STORAGE_CONTAINER    e.g. planning-data
-  AZURE_CURRENT_BLOB         e.g. current.xlsx
-  AZURE_PREVIOUS_BLOB        e.g. previous.xlsx
+  SHAREPOINT_TENANT_ID
+  SHAREPOINT_CLIENT_ID
+  SHAREPOINT_CLIENT_SECRET
+  SHAREPOINT_SITE_URL          e.g. https://microsoft.sharepoint.com/teams/COI-ConstructionEngineering
+
+  Option A — by file path:
+  SHAREPOINT_CURRENT_FILE      e.g. /Shared Documents/planning/current.xlsx
+  SHAREPOINT_PREVIOUS_FILE     e.g. /Shared Documents/planning/previous.xlsx
+
+  Option B — by document GUID (preferred when filenames change monthly):
+  SHAREPOINT_CURRENT_GUID      e.g. 64CA35FA-D4F2-4574-B61F-3427AAAF3B51
+  SHAREPOINT_PREVIOUS_GUID     e.g. 8C6E67F7-0E0D-4267-B45D-FA5728DC2DA7
 """
 import io
 import os
 import logging
 from typing import Optional
-from azure.storage.blob import BlobServiceClient
-from azure.identity import DefaultAzureCredential
 
 logger = logging.getLogger(__name__)
-
-class SharePointError(Exception):
-    """Exception for data loading errors (kept for compatibility)."""
-    pass
 
 # Required columns that must exist in the Excel sheet
 REQUIRED_COLUMNS = {"LOCID", "PRDID", "GSCEQUIPCAT"}
@@ -40,77 +43,11 @@ COLUMN_ALIASES = {
 
 def load_current_previous_from_sharepoint() -> tuple:
     """
-    Downloads current and previous Excel files from Azure Blob Storage.
+    Downloads current and previous Excel files from SharePoint.
+    Supports two modes:
+    - GUID mode: uses SHAREPOINT_CURRENT_GUID / SHAREPOINT_PREVIOUS_GUID
+    - Path mode: uses SHAREPOINT_CURRENT_FILE / SHAREPOINT_PREVIOUS_FILE
     Returns (current_rows, previous_rows) as list[dict].
-    """
-    try:
-        # Get environment variables
-        storage_account = os.getenv("AZURE_STORAGE_ACCOUNT")
-        container_name = os.getenv("AZURE_STORAGE_CONTAINER")
-        current_blob = os.getenv("AZURE_CURRENT_BLOB", "current.xlsx")
-        previous_blob = os.getenv("AZURE_PREVIOUS_BLOB", "previous.xlsx")
-
-        if not all([storage_account, container_name]):
-            raise ValueError("Missing required environment variables: AZURE_STORAGE_ACCOUNT, AZURE_STORAGE_CONTAINER")
-
-        # Authenticate using Managed Identity
-        credential = DefaultAzureCredential()
-        account_url = f"https://{storage_account}.blob.core.windows.net"
-        blob_service_client = BlobServiceClient(account_url=account_url, credential=credential)
-
-        # Download current file
-        current_data = download_blob(blob_service_client, container_name, current_blob)
-        current_rows = parse_excel_to_rows(current_data)
-
-        # Download previous file
-        previous_data = download_blob(blob_service_client, container_name, previous_blob)
-        previous_rows = parse_excel_to_rows(previous_data)
-
-        logger.info(f"Successfully loaded {len(current_rows)} current rows and {len(previous_rows)} previous rows from Blob Storage")
-        return current_rows, previous_rows
-
-    except Exception as e:
-        logger.error(f"Failed to load data from Blob Storage: {str(e)}")
-        raise SharePointError(str(e))
-
-
-def download_blob(blob_service_client, container_name, blob_name):
-    """Download blob content as bytes."""
-    blob_client = blob_service_client.get_blob_client(container=container_name, blob=blob_name)
-    download_stream = blob_client.download_blob()
-    return download_stream.readall()
-
-
-def parse_excel_to_rows(data: bytes) -> list[dict]:
-    """Parse Excel bytes to normalized row dicts."""
-    import pandas as pd
-
-    df = pd.read_excel(io.BytesIO(data))
-    df.columns = df.columns.str.strip()
-
-    # Validate required columns
-    missing_cols = REQUIRED_COLUMNS - set(df.columns)
-    if missing_cols:
-        raise ValueError(f"Missing required columns: {missing_cols}")
-
-    # Apply column aliases
-    df = df.rename(columns=COLUMN_ALIASES)
-
-    # Normalize column names
-    df.columns = [col.upper() for col in df.columns]
-
-    # Convert to list of dicts
-    rows = df.to_dict('records')
-
-    # Normalize values
-    for row in rows:
-        for key, value in row.items():
-            if pd.isna(value):
-                row[key] = None
-            elif isinstance(value, str):
-                row[key] = value.strip()
-
-    return rows
     """
     token = _get_access_token()
     site_url = _require_env("SHAREPOINT_SITE_URL").rstrip("/")

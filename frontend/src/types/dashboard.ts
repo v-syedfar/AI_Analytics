@@ -2,7 +2,7 @@ export type TrendDirection = "Increase" | "Decrease" | "Stable" | "Volatile";
 export type HealthStatus = "Healthy" | "Stable" | "At Risk" | "Critical";
 export type RiskLevel = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
 export type AlertSeverity = "info" | "warning" | "high" | "critical";
-export type DataMode = "live" | "cached" | "sharepoint";
+export type DataMode = "live" | "cached" | "blob" | "sharepoint";
 
 export interface SupplierDetail {
   supplier: string;

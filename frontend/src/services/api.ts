@@ -3,17 +3,17 @@ import { DashboardResponse } from "../types/dashboard";
 const API_URL = process.env.REACT_APP_API_URL || "http://localhost:7071/api";
 const API_KEY = process.env.REACT_APP_API_KEY || "";
 
-const headers = {
-  "Content-Type": "application/json",
-  ...(API_KEY ? { "x-functions-key": API_KEY } : {}),
-};
-
+// Use query param auth only — Azure Functions standard
 function endpoint(path: string): string {
   return `${API_URL}/${path}${API_KEY ? `?code=${API_KEY}` : ""}`;
 }
 
+const headers = {
+  "Content-Type": "application/json",
+};
+
 export async function fetchDashboard(payload: {
-  mode?: "live" | "cached" | "sharepoint";
+  mode?: "live" | "cached" | "blob";
   location_id?: string;
   material_group?: string;
   current_rows?: object[];
@@ -51,7 +51,7 @@ export async function fetchExplain(payload: {
   return res.json();
 }
 
-export async function triggerDailyRefresh(): Promise<{
+export async function triggerDailyRefresh(source: "blob" | "sharepoint" = "blob"): Promise<{
   status: string;
   lastRefreshedAt: string;
   totalRecords: number;
@@ -61,7 +61,7 @@ export async function triggerDailyRefresh(): Promise<{
   const res = await fetch(endpoint("daily-refresh"), {
     method: "POST",
     headers,
-    body: JSON.stringify({}),
+    body: JSON.stringify({ source }),
   });
   if (!res.ok) throw new Error(`Refresh failed: ${res.status}`);
   return res.json();

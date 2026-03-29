@@ -1,7 +1,7 @@
 """
 Daily Refresh Job
-Reads SharePoint files, runs the full analytics pipeline,
-builds the dashboard response, and saves a snapshot.
+Reads Excel files from Azure Blob Storage (default) or SharePoint (optional legacy),
+runs the full analytics pipeline, builds the dashboard response, and saves a snapshot.
 
 Can be triggered:
   1. Manually: python run_daily_refresh.py
@@ -15,11 +15,9 @@ import sys
 # Allow running standalone
 sys.path.insert(0, os.path.dirname(__file__))
 
-from sharepoint_loader import load_current_previous_from_sharepoint, SharePointError
 from normalizer import normalize_rows
 from filters import filter_records
 from comparator import compare_records
-from trend_analyzer import analyze_trends
 from response_builder import build_response
 from snapshot_store import save_snapshot
 
@@ -30,25 +28,29 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 def run_daily_refresh(
     location_id: str = None,
     material_group: str = None,
+    source: str = "blob",  # "blob" is the default — SharePoint kept for backward compat
 ) -> dict:
     """
     Full pipeline:
-    1. Load current + previous from SharePoint
-    2. Normalize
-    3. Filter (optional)
-    4. Compare
-    5. Build dashboard response
-    6. Save snapshot
+    1. Load current + previous from Blob Storage (default) or SharePoint
+    2. Normalize → Filter → Compare
+    3. Build dashboard response
+    4. Save snapshot
     Returns the dashboard response dict.
     """
-    logger.info("Starting daily planning refresh...")
+    logger.info(f"Starting daily planning refresh (source={source})...")
 
-    # Step 1: Load from SharePoint
+    # Step 1: Load data
     try:
-        current_rows, previous_rows = load_current_previous_from_sharepoint()
+        if source == "sharepoint":
+            from sharepoint_loader import load_current_previous_from_sharepoint
+            current_rows, previous_rows = load_current_previous_from_sharepoint()
+        else:
+            from blob_loader import load_current_previous_from_blob
+            current_rows, previous_rows = load_current_previous_from_blob()
         logger.info(f"Loaded {len(current_rows)} current rows, {len(previous_rows)} previous rows.")
-    except SharePointError as e:
-        logger.error(f"SharePoint load failed: {e}")
+    except Exception as e:
+        logger.error(f"Data load failed: {e}")
         raise
 
     # Step 2: Normalize

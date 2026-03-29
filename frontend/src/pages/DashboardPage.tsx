@@ -69,7 +69,8 @@ export const DashboardPage: React.FC = () => {
   const modeColor: Record<DataMode, string> = {
     live: "bg-green-900/30 text-green-400",
     cached: "bg-blue-900/30 text-blue-400",
-    sharepoint: "bg-purple-900/30 text-purple-400",
+    blob: "bg-purple-900/30 text-purple-400",
+    sharepoint: "bg-indigo-900/30 text-indigo-400",
   };
 
   return (

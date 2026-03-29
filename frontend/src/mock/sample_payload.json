@@ -1,0 +1,88 @@
+{
+  "dataMode": "cached",
+  "lastRefreshedAt": "2026-03-29T06:00:00.000Z",
+  "planningHealth": 72,
+  "status": "Stable",
+  "forecastNew": 4850,
+  "forecastOld": 3900,
+  "trendDirection": "Increase",
+  "trendDelta": 950,
+  "datacenterCount": 3,
+  "materialGroups": ["PUMP", "VALVE", "MOTOR"],
+  "totalRecords": 120,
+  "changedRecordCount": 34,
+  "unchangedRecordCount": 86,
+  "newRecordCount": 3,
+  "supplierSummary": {
+    "changed": 6,
+    "topSupplier": "SUP-A",
+    "details": [
+      { "supplier": "SUP-A", "previousSupplier": "SUP-B", "affectedMaterials": ["MAT-100", "MAT-101"], "riskLevel": "Supplier Change Risk" }
+    ]
+  },
+  "designSummary": {
+    "status": "Changed",
+    "bodChangedCount": 3,
+    "formFactorChangedCount": 1,
+    "details": [
+      { "materialId": "MAT-100", "locationId": "LOC001", "materialGroup": "PUMP", "bodPrevious": "v2", "bodCurrent": "v3", "ffPrevious": "FF-A", "ffCurrent": "FF-B", "riskLevel": "Design Change Risk" }
+    ]
+  },
+  "rojSummary": {
+    "status": "Changed",
+    "changedCount": 8,
+    "details": [
+      { "materialId": "MAT-102", "locationId": "LOC001", "rojPrevious": "2026-06-01", "rojCurrent": "2026-07-15", "rojReasonCode": "DEMAND_SHIFT" }
+    ]
+  },
+  "riskSummary": {
+    "level": "HIGH",
+    "highestRiskLevel": "Design Change Risk",
+    "quantityChangedCount": 20,
+    "supplierChangedCount": 6,
+    "designChangedCount": 4,
+    "rojChangedCount": 8,
+    "highRiskCount": 12,
+    "riskBreakdown": {
+      "Design Change Risk": 4,
+      "Supplier Change Risk": 6,
+      "High Demand Spike": 2
+    }
+  },
+  "aiInsight": "28% of records changed this planning cycle. Forecast demand is trending upward (+950 units). Key drivers: 20 quantity, 6 supplier, 4 design, 8 schedule changes. Location LOC001 has the highest change concentration. Risk level: Design Change Risk.",
+  "rootCause": "Primary driver is quantity (20 records). Change type: Quantity + Supplier + Design + Schedule. Location LOC001 is the main source. Supplier SUP-A is involved in supplier-related changes. Design changes indicate potential specification updates affecting procurement.",
+  "recommendedActions": [
+    "Review BOD version and Form Factor changes with engineering before procurement.",
+    "Validate supplier transition plan for SUP-A to avoid supply disruption.",
+    "Review ROJ date shifts with supply chain team to assess delivery risk.",
+    "Confirm capacity availability to support increasing forecast demand.",
+    "Prioritize planner review for location LOC001."
+  ],
+  "drivers": {
+    "location": "LOC001",
+    "supplier": "SUP-A",
+    "material": "MAT-100",
+    "materialGroup": "PUMP",
+    "changeType": "quantity"
+  },
+  "alerts": {
+    "shouldTrigger": true,
+    "severity": "high",
+    "triggerType": "design_change",
+    "message": "4 design change(s) detected (BOD/Form Factor). Procurement impact likely.",
+    "drivers": { "materialGroup": "PUMP", "supplier": "SUP-A" },
+    "recommendedAction": "Review BOD version and Form Factor changes with engineering before procurement."
+  },
+  "datacenterSummary": [
+    { "locationId": "LOC001", "dcSite": "DC-WEST", "total": 60, "changed": 18 },
+    { "locationId": "LOC002", "dcSite": "DC-EAST", "total": 40, "changed": 12 },
+    { "locationId": "LOC003", "dcSite": "DC-SOUTH", "total": 20, "changed": 4 }
+  ],
+  "materialGroupSummary": [
+    { "materialGroup": "PUMP", "total": 50, "changed": 18, "qtyChanged": 10, "designChanged": 3, "supplierChanged": 2 },
+    { "materialGroup": "VALVE", "total": 40, "changed": 10, "qtyChanged": 6, "designChanged": 1, "supplierChanged": 2 },
+    { "materialGroup": "MOTOR", "total": 30, "changed": 6, "qtyChanged": 4, "designChanged": 0, "supplierChanged": 2 }
+  ],
+  "detailRecords": [],
+  "filters": { "locationId": null, "materialGroup": null }
+}
