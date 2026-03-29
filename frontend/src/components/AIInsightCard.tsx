@@ -11,3 +11,7 @@ export const AIInsightCard: React.FC<Props> = ({ aiInsight }) => (
     <p className="text-sm text-gray-200 leading-relaxed">{aiInsight || "No insight available."}</p>
   </div>
 );
+
+
+
+

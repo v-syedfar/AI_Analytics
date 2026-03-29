@@ -1,5 +1,5 @@
 import React from "react";
-import { MaterialGroupSummary } from "../types/dashboard";
+import { MaterialGroupSummary } from "../types/dashboard.tsx";
 
 interface Props { materialGroupSummary: MaterialGroupSummary[]; }
 
@@ -23,3 +23,7 @@ export const MaterialGroupCard: React.FC<Props> = ({ materialGroupSummary }) => 
     </div>
   </div>
 );
+
+
+
+

@@ -43,3 +43,7 @@ export const RiskCard: React.FC<Props> = ({ riskSummary }) => {
     </div>
   );
 };
+
+
+
+

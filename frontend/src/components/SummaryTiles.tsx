@@ -1,5 +1,5 @@
 import React from "react";
-import { DashboardResponse } from "../types/dashboard";
+import { DashboardResponse } from "../types/dashboard.tsx";
 
 interface TileProps { label: string; value: number | string; sub?: string; color?: string; }
 
@@ -28,3 +28,7 @@ export const SummaryTiles: React.FC<Props> = ({ data }) => {
     </div>
   );
 };
+
+
+
+

@@ -1,5 +1,5 @@
 import React from "react";
-import { HealthStatus } from "../types/dashboard";
+import { HealthStatus } from "../types/dashboard.tsx";
 
 const statusColor: Record<HealthStatus, string> = {
   Healthy: "#3fb950",
@@ -32,3 +32,7 @@ export const PlanningHealthCard: React.FC<Props> = ({ score, status }) => {
     </div>
   );
 };
+
+
+
+
