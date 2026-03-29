@@ -1,5 +1,5 @@
 import React from "react";
-import { AlertPayload } from "../types/dashboard";
+import { AlertPayload } from "../types/dashboard.tsx";
 
 const severityStyle: Record<string, string> = {
   critical: "bg-red-950/60 border-red-500/50 text-red-300",
@@ -43,3 +43,7 @@ export const AlertBanner: React.FC<Props> = ({ alert }) => {
     </div>
   );
 };
+
+
+
+

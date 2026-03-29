@@ -11,3 +11,7 @@ export const RootCauseCard: React.FC<Props> = ({ rootCause }) => (
     <p className="text-sm text-gray-300 leading-relaxed">{rootCause || "Root cause not available."}</p>
   </div>
 );
+
+
+
+
