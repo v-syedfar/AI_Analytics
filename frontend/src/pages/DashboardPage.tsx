@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DashboardResponse, DataMode } from "../types/dashboard";
 import { fetchDashboard } from "../services/api";
-
 import { AlertBanner } from "../components/AlertBanner";
 import { PlanningHealthCard } from "../components/PlanningHealthCard";
 import { ForecastCard } from "../components/ForecastCard";
