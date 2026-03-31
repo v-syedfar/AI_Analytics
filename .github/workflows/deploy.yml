@@ -70,7 +70,7 @@ jobs:
         run: |
           curl -X POST \
             "https://pi-planning-intelligence-fpdqcaayahcpe9b5.scm.southindia-01.azurewebsites.net/api/zipdeploy" \
-            -u "${{ secrets.SCM_USERNAME }}:${{ secrets.SCM_PASSWORD }}" \
+            --user "${{ secrets.SCM_USERNAME }}:${{ secrets.SCM_PASSWORD }}" \
             -H "Content-Type: application/zip" \
             --data-binary @deploy.zip \
             --fail
