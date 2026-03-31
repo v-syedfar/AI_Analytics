@@ -1,5 +1,5 @@
 import React from "react";
-import { SupplierDetail } from "../types/dashboard.tsx";
+import { SupplierDetail } from "../types/dashboard";
 
 interface Props { supplierSummary: { changed: number; topSupplier: string | null; details: SupplierDetail[] }; }
 
@@ -24,6 +24,7 @@ export const SupplierCard: React.FC<Props> = ({ supplierSummary }) => (
     }
   </div>
 );
+
 
 
 

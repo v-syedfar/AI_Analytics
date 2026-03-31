@@ -1,5 +1,5 @@
 import React from "react";
-import { TrendDirection } from "../types/dashboard.tsx";
+import { TrendDirection } from "../types/dashboard";
 
 interface Props {
   forecastNew: number;
@@ -34,6 +34,7 @@ export const ForecastCard: React.FC<Props> = ({ forecastNew, forecastOld, trendD
     </div>
   );
 };
+
 
 
 

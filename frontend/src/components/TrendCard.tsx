@@ -1,5 +1,5 @@
 import React from "react";
-import { TrendDirection } from "../types/dashboard.tsx";
+import { TrendDirection } from "../types/dashboard";
 
 const dirStyle: Record<TrendDirection, { color: string; bg: string; label: string }> = {
   Increase: { color: "text-green-400", bg: "bg-green-900/20", label: "Increasing ▲" },
@@ -45,6 +45,7 @@ export const TrendCard: React.FC<Props> = ({ trendDirection, riskSummary, totalR
     </div>
   );
 };
+
 
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { DesignDetail } from "../types/dashboard.tsx";
+import { DesignDetail } from "../types/dashboard";
 
 interface Props { designSummary: { status: string; bodChangedCount: number; formFactorChangedCount: number; details: DesignDetail[] }; }
 
@@ -30,6 +30,7 @@ export const DesignCard: React.FC<Props> = ({ designSummary }) => (
     }
   </div>
 );
+
 
 
 

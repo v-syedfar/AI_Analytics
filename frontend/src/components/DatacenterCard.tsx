@@ -1,5 +1,5 @@
 import React from "react";
-import { DatacenterSummary } from "../types/dashboard.tsx";
+import { DatacenterSummary } from "../types/dashboard";
 
 interface Props { datacenterSummary: DatacenterSummary[]; }
 
@@ -26,6 +26,7 @@ export const DatacenterCard: React.FC<Props> = ({ datacenterSummary }) => (
     </div>
   </div>
 );
+
 
 
 
