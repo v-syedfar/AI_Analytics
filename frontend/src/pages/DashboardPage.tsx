@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { DashboardResponse, DataMode } from "../types/dashboard.tsx";
-import { fetchDashboard } from "../services/api.ts";
+import { DashboardResponse, DataMode } from "../types/dashboard";
+import { fetchDashboard } from "../services/api";
 
-import { AlertBanner } from "../components/AlertBanner.tsx";
-import { PlanningHealthCard } from "../components/PlanningHealthCard.tsx";
-import { ForecastCard } from "../components/ForecastCard.tsx";
-import { TrendCard } from "../components/TrendCard.tsx";
-import { SummaryTiles } from "../components/SummaryTiles.tsx";
-import { AIInsightCard } from "../components/AIInsightCard.tsx";
-import { RootCauseCard } from "../components/RootCauseCard.tsx";
-import { RiskCard } from "../components/RiskCard.tsx";
-import { ActionsPanel } from "../components/ActionsPanel.tsx";
-import { DatacenterCard } from "../components/DatacenterCard.tsx";
-import { MaterialGroupCard } from "../components/MaterialGroupCard.tsx";
-import { SupplierCard } from "../components/SupplierCard.tsx";
-import { DesignCard } from "../components/DesignCard.tsx";
-import { RojCard } from "../components/RojCard.tsx";
+import { AlertBanner } from "../components/AlertBanner";
+import { PlanningHealthCard } from "../components/PlanningHealthCard";
+import { ForecastCard } from "../components/ForecastCard";
+import { TrendCard } from "../components/TrendCard";
+import { SummaryTiles } from "../components/SummaryTiles";
+import { AIInsightCard } from "../components/AIInsightCard";
+import { RootCauseCard } from "../components/RootCauseCard";
+import { RiskCard } from "../components/RiskCard";
+import { ActionsPanel } from "../components/ActionsPanel";
+import { DatacenterCard } from "../components/DatacenterCard";
+import { MaterialGroupCard } from "../components/MaterialGroupCard";
+import { SupplierCard } from "../components/SupplierCard";
+import { DesignCard } from "../components/DesignCard";
+import { RojCard } from "../components/RojCard";
 
 const USE_MOCK = process.env.REACT_APP_USE_MOCK !== "false";
 
@@ -34,7 +34,8 @@ export const DashboardPage: React.FC = () => {
     }
     fetchDashboard({ mode: "cached" })
       .then(d => { setData(d); setLoading(false); })
-      .catch(() => {
+      .catch((err) => {
+        setError(`API unavailable: ${err.message}. Showing cached demo data.`);
         import("../mock/sample_payload.json").then(m => {
           setData(m.default as DashboardResponse);
           setLoading(false);
@@ -86,6 +87,7 @@ export const DashboardPage: React.FC = () => {
             <rect x="12" y="12" width="11" height="11" fill="#ffb900"/>
           </svg>
           <div>
+            <p className="text-xs text-gray-400 font-medium tracking-wide">Microsoft</p>
             <h1 className="text-lg font-semibold">Planning Intelligence</h1>
             <p className="text-xs text-gray-500 mt-0.5">
               {data.filters?.locationId ? `Location: ${data.filters.locationId}` : "All Locations"}
@@ -154,8 +156,3 @@ export const DashboardPage: React.FC = () => {
     </div>
   );
 };
-
-
-
-
-

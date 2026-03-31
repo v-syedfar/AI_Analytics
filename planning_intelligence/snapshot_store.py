@@ -17,7 +17,7 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_PATH = os.environ.get("SNAPSHOT_FILE_PATH", "/tmp/planning_snapshot.json")
+DEFAULT_PATH = os.environ.get("SNAPSHOT_FILE_PATH", "/home/data/planning_snapshot.json")
 
 # In-memory fallback (used when file system is unavailable)
 _memory_store: Optional[dict] = None
@@ -42,12 +42,20 @@ def save_snapshot(data: dict, path: str = DEFAULT_PATH) -> None:
 
     # Try file system first
     try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             json.dump(payload, f, default=str)
         logger.info(f"Snapshot saved to {path}")
     except OSError as e:
-        logger.warning(f"Could not write snapshot to {path}: {e}. Using memory store.")
-        _memory_store = payload
+        # Fallback to /tmp if mounted path unavailable
+        tmp_path = "/tmp/planning_snapshot.json"
+        try:
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, default=str)
+            logger.warning(f"Saved to fallback path {tmp_path}: {e}")
+        except OSError:
+            logger.warning(f"Could not write snapshot to {path}: {e}. Using memory store.")
+            _memory_store = payload
 
 
 def load_snapshot(path: str = DEFAULT_PATH) -> Optional[dict]:
@@ -57,14 +65,15 @@ def load_snapshot(path: str = DEFAULT_PATH) -> Optional[dict]:
     global _memory_store
 
     # Try file first
-    try:
-        if os.path.exists(path):
-            with open(path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            logger.info(f"Snapshot loaded from {path}")
-            return data
-    except (OSError, json.JSONDecodeError) as e:
-        logger.warning(f"Could not read snapshot from {path}: {e}")
+    for check_path in [path, "/tmp/planning_snapshot.json"]:
+        try:
+            if os.path.exists(check_path):
+                with open(check_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                logger.info(f"Snapshot loaded from {check_path}")
+                return data
+        except (OSError, json.JSONDecodeError) as e:
+            logger.warning(f"Could not read snapshot from {check_path}: {e}")
 
     # Fall back to memory
     if _memory_store:
