@@ -1,4 +1,4 @@
-name: Deploy Planning Intelligence to Azure Functions
+name: Deploy Planning Intelligence
 
 on:
   push:
@@ -9,7 +9,6 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'planning_intelligence'
   PYTHON_VERSION: '3.13'
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -48,8 +47,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: python-app
+          name: planning-intelligence-release
           path: release.zip
+          retention-days: 5
 
   deploy:
     runs-on: ubuntu-latest
@@ -61,15 +61,11 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: python-app
-
-      - name: Prepare zip
-        run: mv release.zip deploy.zip
+          name: planning-intelligence-release
 
       - name: Deploy to Azure Functions
-        uses: Azure/functions-action@v1.5.1
+        uses: Azure/functions-action@v1
         with:
           app-name: 'pi-planning-intelligence'
-          package: deploy.zip
+          package: release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-          respect-funcignore: true
