@@ -29,13 +29,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pushd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           pip install -r requirements.txt --target=".python_packages/lib/site-packages" --upgrade
-          popd
 
       - name: Zip artifact for deployment
         run: |
-          pushd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           zip -r ../release.zip . \
             --exclude "tests/*" \
             --exclude "__pycache__/*" \
@@ -44,7 +43,6 @@ jobs:
             --exclude "venv/*" \
             --exclude ".venv/*" \
             --exclude "samples/*"
-          popd
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
