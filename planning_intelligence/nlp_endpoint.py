@@ -5,7 +5,7 @@ This module provides the natural language processing endpoint that integrates
 with the Copilot UI. It processes natural language questions and routes them
 through the NLP pipeline to generate appropriate responses.
 
-Features:
+Features: Test
 - Natural language question processing
 - Intent classification (with Azure OpenAI)
 - Entity extraction (with Azure OpenAI)
