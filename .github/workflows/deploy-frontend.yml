@@ -2,7 +2,7 @@ name: Deploy Frontend
 
 on:
   push:
-    branches: [main]
+    branches: [main, feature/planning-intelligence]
     paths:
       - 'frontend/**'
       - '.github/workflows/deploy-frontend.yml'
