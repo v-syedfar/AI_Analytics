@@ -3,7 +3,6 @@ name: Deploy Planning Intelligence to Azure Functions
 on:
   push:
     branches:
-      - main
       - feature/planning-intelligence
   workflow_dispatch:
 
