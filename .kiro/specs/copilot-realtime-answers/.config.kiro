@@ -1,0 +1,9 @@
+{
+  "specType": "feature",
+  "workflowType": "design-first",
+  "featureName": "copilot-realtime-answers",
+  "displayName": "Copilot Real-Time Answers",
+  "description": "Improve Copilot responses to feel more real-time, question-specific, and analyst-like by adding query-specific computation, scoped recalculation, and better response shaping.",
+  "status": "ready_for_implementation",
+  "createdAt": "2026-04-05T10:00:00Z"
+}

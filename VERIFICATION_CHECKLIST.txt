@@ -1,0 +1,319 @@
+================================================================================
+FRONTEND RESPONSE VERIFICATION CHECKLIST
+================================================================================
+
+Status: ⚠️ NEEDS VERIFICATION
+
+================================================================================
+CRITICAL ISSUES TO VERIFY
+================================================================================
+
+ISSUE #1: INCONSISTENT CHANGE RATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Frontend Response Claims:
+  • Change Rate: 39.2% (5,150 of 13,148)
+  • Also states: 35.9% of records changed (4,725 of 13,148)
+
+Calculation Check:
+  5,150 / 13,148 = 39.2% ✅ CORRECT
+  4,725 / 13,148 = 35.9% ✅ CORRECT
+
+PROBLEM: Two different percentages!
+  - 39.2% = Total changed records
+  - 35.9% = Quantity changes only
+
+VERIFICATION NEEDED:
+  [ ] Confirm which is the correct "change rate"
+  [ ] Clarify if 39.2% is total and 35.9% is quantity-only
+  [ ] Update response to be clear about the difference
+  [ ] Verify backend is calculating correctly
+
+---
+
+ISSUE #2: DRIVER BREAKDOWN EXCEEDS TOTAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Frontend Response Claims:
+  Key drivers:
+    • 4,725 quantity
+    • 1,499 supplier
+    • 1,926 design
+    • 4,681 schedule
+
+Calculation Check:
+  4,725 + 1,499 + 1,926 + 4,681 = 12,831
+  
+  BUT Total Changed Records = 5,150
+  
+  MISMATCH: 12,831 ≠ 5,150
+  Difference: 12,831 - 5,150 = 7,681 extra
+
+EXPLANATION NEEDED:
+  [ ] Are records counted multiple times?
+  [ ] Do some records have multiple change types?
+  [ ] Is this expected behavior?
+  [ ] Should response clarify this?
+
+VERIFICATION NEEDED:
+  [ ] Confirm records can have multiple changes
+  [ ] Verify each driver count is correct
+  [ ] Verify calculation method in backend
+  [ ] Update response to clarify multiple changes
+
+---
+
+ISSUE #3: LOCATION COMPARISON MISMATCH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Frontend Response Claims:
+  "Location AVC11_F01C01 has the highest change concentration."
+  
+  BUT ALSO:
+  "Compare CLT05_F01C04 vs CLT05_F01C01"
+
+INCONSISTENCY:
+  [ ] If AVC11_F01C01 is highest, why compare CLT05 locations?
+  [ ] Should comparison be AVC11_F01C01 vs CLT05_F01C01?
+  [ ] Or is CLT05_F01C04 vs CLT05_F01C01 the correct comparison?
+
+VERIFICATION NEEDED:
+  [ ] Verify which location actually has highest concentration
+  [ ] Verify comparison locations are correct
+  [ ] Verify comparison logic in backend
+  [ ] Update response to be consistent
+
+---
+
+ISSUE #4: NEW MATERIAL RECORDS SOURCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Frontend Response Claims:
+  "Establish baseline planning parameters for 3466 new material records"
+
+QUESTIONS:
+  [ ] Where does 3,466 come from?
+  [ ] Is this Is_New Demand flag = true?
+  [ ] Is this derived from data or hardcoded?
+  [ ] How is "new material record" defined?
+  [ ] Is this count correct?
+
+VERIFICATION NEEDED:
+  [ ] Verify 3,466 is correct count
+  [ ] Verify calculation method
+  [ ] Verify data source (SAP field)
+  [ ] Verify logic in backend
+
+---
+
+ISSUE #5: SUPPLIER CODE SOURCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Frontend Response Claims:
+  "Validate supplier transition plan for 210_AMER"
+
+QUESTIONS:
+  [ ] Where does "210_AMER" come from?
+  [ ] Is this a supplier code (LOCFR)?
+  [ ] How was this identified?
+  [ ] Is this the supplier with most changes?
+  [ ] Is this correct?
+
+VERIFICATION NEEDED:
+  [ ] Verify 210_AMER exists in data
+  [ ] Verify it's identified as needing transition
+  [ ] Verify calculation method
+  [ ] Verify logic in backend
+
+---
+
+ISSUE #6: FORECAST DELTA SOURCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Frontend Response Claims:
+  "Forecast demand is trending downward (50,980 units)"
+
+QUESTIONS:
+  [ ] Is 50,980 the total forecast delta?
+  [ ] Is this SUM(GSCFSCTQTY - GSCPREVFCSTQTY)?
+  [ ] Is this correct calculation?
+  [ ] Is this the right metric?
+
+VERIFICATION NEEDED:
+  [ ] Verify 50,980 is correct
+  [ ] Verify it's sum of all deltas
+  [ ] Verify calculation method
+  [ ] Verify logic in backend
+
+================================================================================
+DATA VERIFICATION CHECKLIST
+================================================================================
+
+RECORD COUNTS:
+  [ ] Total Records: 13,148 - VERIFY
+  [ ] Changed Records: 5,150 - VERIFY
+  [ ] Locations: 1,373 - VERIFY
+  [ ] New Material Records: 3,466 - VERIFY
+
+DRIVER COUNTS:
+  [ ] Quantity Changes: 4,725 - VERIFY
+  [ ] Supplier Changes: 1,499 - VERIFY
+  [ ] Design Changes: 1,926 - VERIFY
+  [ ] Schedule Changes: 4,681 - VERIFY
+
+LOCATION DATA:
+  [ ] AVC11_F01C01 is highest - VERIFY
+  [ ] CLT05_F01C04 exists - VERIFY
+  [ ] CLT05_F01C01 exists - VERIFY
+
+SUPPLIER DATA:
+  [ ] 210_AMER exists - VERIFY
+  [ ] 210_AMER has supplier changes - VERIFY
+
+FORECAST DATA:
+  [ ] Forecast Delta: 50,980 - VERIFY
+  [ ] Trend is downward - VERIFY
+
+================================================================================
+BACKEND CALCULATION VERIFICATION
+================================================================================
+
+PHASE 1: INTENT & SCOPE EXTRACTION
+  [ ] Query classified correctly
+  [ ] Scope extracted correctly
+  [ ] Mode determined correctly
+
+PHASE 2: METRICS COMPUTATION
+  [ ] Total records counted correctly
+  [ ] Changed records counted correctly
+  [ ] Change rate calculated correctly
+  [ ] Drivers identified correctly
+  [ ] Primary driver determined correctly
+  [ ] Location analysis correct
+  [ ] Supplier analysis correct
+
+PHASE 3: RESPONSE GENERATION
+  [ ] Template selected correctly
+  [ ] Metrics formatted correctly
+  [ ] Drivers presented correctly
+  [ ] Actions generated correctly
+  [ ] Response is accurate
+
+================================================================================
+SAP FIELD MAPPING VERIFICATION
+================================================================================
+
+LOCATION FIELDS:
+  [ ] ZCOILLEPLANINDZCO (Location ID) - VERIFY
+  [ ] LOCFR (Supplier) - VERIFY
+  [ ] ZCOIBODVERZ (BOD Version) - VERIFY
+  [ ] ZCOIFORMFACTZ (Form Factor) - VERIFY
+
+FORECAST FIELDS:
+  [ ] GSCPREVFCSTQTY (Previous Forecast) - VERIFY
+  [ ] GSCFSCTQTY (Current Forecast) - VERIFY
+  [ ] FCST_Delta Qty (Forecast Delta) - VERIFY
+
+ROJ FIELDS:
+  [ ] GSCPREVROJNBD (Previous ROJ) - VERIFY
+  [ ] GSCCONROJDATE (Current ROJ) - VERIFY
+  [ ] NBD_DeltaDays (ROJ Shift) - VERIFY
+
+SUPPLIER FIELDS:
+  [ ] GSCPREVSUPLDATEZ (Previous Supplier Date) - VERIFY
+  [ ] GSCSUPLDATEZ (Current Supplier Date) - VERIFY
+
+DERIVED FIELDS:
+  [ ] qtyChanged - VERIFY
+  [ ] supplierChanged - VERIFY
+  [ ] designChanged - VERIFY
+  [ ] scheduleChanged - VERIFY
+  [ ] changed - VERIFY
+  [ ] Risk_Flag - VERIFY
+
+================================================================================
+RESPONSE QUALITY VERIFICATION
+================================================================================
+
+ACCURACY:
+  [ ] Metrics are accurate
+  [ ] Drivers are correct
+  [ ] Risk assessment is valid
+  [ ] Actions are relevant
+  [ ] No hallucinations
+
+CLARITY:
+  [ ] Response is clear
+  [ ] Formatting is good
+  [ ] Emojis display correctly
+  [ ] Structure is logical
+
+COMPLETENESS:
+  [ ] All metrics included
+  [ ] All drivers included
+  [ ] All actions included
+  [ ] No missing information
+
+PROFESSIONALISM:
+  [ ] Tone is professional
+  [ ] Language is clear
+  [ ] Recommendations are actionable
+  [ ] Format is polished
+
+================================================================================
+CROSS-CHECK QUESTIONS FOR USER
+================================================================================
+
+1. RECORD COUNTS:
+   [ ] Is 13,148 total records correct?
+   [ ] Is 5,150 changed records correct?
+   [ ] Is 1,373 locations correct?
+
+2. DRIVER COUNTS:
+   [ ] Are driver counts correct?
+   [ ] Do records have multiple changes?
+   [ ] Should this be clarified in response?
+
+3. LOCATION DATA:
+   [ ] Is AVC11_F01C01 actually the highest?
+   [ ] Should comparison be different?
+   [ ] Are comparison locations correct?
+
+4. SUPPLIER DATA:
+   [ ] Does 210_AMER exist in data?
+   [ ] Is it the supplier with most changes?
+   [ ] Is this the right supplier to highlight?
+
+5. FORECAST DATA:
+   [ ] Is 50,980 the correct forecast delta?
+   [ ] Is trend actually downward?
+   [ ] Is this the right metric?
+
+6. NEW MATERIALS:
+   [ ] Is 3,466 the correct count?
+   [ ] How is "new material" defined?
+   [ ] Is this important to highlight?
+
+================================================================================
+VERIFICATION SUMMARY
+================================================================================
+
+CRITICAL ISSUES: 6
+  [ ] Inconsistent change rates
+  [ ] Driver breakdown exceeds total
+  [ ] Location comparison mismatch
+  [ ] New material records source
+  [ ] Supplier code source
+  [ ] Forecast delta source
+
+VERIFICATION STATUS: ⚠️ PENDING
+
+NEXT STEPS:
+  1. Answer cross-check questions
+  2. Verify all calculations
+  3. Verify all data sources
+  4. Verify SAP field mappings
+  5. Update response if needed
+  6. Re-test integration
+
+================================================================================

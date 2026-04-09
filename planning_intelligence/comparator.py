@@ -59,8 +59,13 @@ def compare_records(
         qty_changed = _values_differ(cur.forecast_qty, prev.forecast_qty if prev else None)
         roj_changed = _values_differ(cur.roj, prev.roj if prev else None)
         supplier_changed = _values_differ(cur.supplier, prev.supplier if prev else None)
-        design_changed = _values_differ(cur.bod, prev.bod if prev else None) or \
-                         _values_differ(cur.ff, prev.ff if prev else None)
+
+        # Strict design change: BOD or FF changed, but NOT for new demand or cancelled
+        bod_changed = _values_differ(cur.bod, prev.bod if prev else None)
+        ff_changed = _values_differ(cur.ff, prev.ff if prev else None)
+        is_new = cur.is_new_demand or (prev is None)
+        is_cancelled = cur.is_cancelled
+        design_changed = (bod_changed or ff_changed) and not is_new and not is_cancelled
 
         qty_delta: Optional[float] = None
         if cur.forecast_qty is not None and prev is not None and prev.forecast_qty is not None:
@@ -80,7 +85,6 @@ def compare_records(
             bod_previous=prev.bod if prev else None,
             ff_current=cur.ff,
             ff_previous=prev.ff if prev else None,
-            # Context fields carried from current row
             roc_region=cur.roc_region,
             dc_site=cur.dc_site,
             metro=cur.metro,
@@ -94,6 +98,15 @@ def compare_records(
             supplier_changed=supplier_changed,
             design_changed=design_changed,
             qty_delta=qty_delta,
+            # Enhanced flags
+            is_new_demand=is_new,
+            is_cancelled=is_cancelled,
+            risk_flag=cur.risk_flag,
+            fcst_delta_qty=cur.fcst_delta_qty or qty_delta,
+            nbd_delta_days=cur.nbd_delta_days,
+            is_supplier_date_missing=cur.is_supplier_date_missing,
+            bod_changed=bod_changed,
+            ff_changed=ff_changed,
         )
         rec.change_type = _derive_change_type(rec)
         rec.risk_level = _derive_risk_level(rec)

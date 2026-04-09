@@ -1,0 +1,498 @@
+{
+  "total": 44,
+  "passed": 31,
+  "failed": 13,
+  "pass_rate": 70.5,
+  "timestamp": "2026-04-09T15:49:02.787875",
+  "start_time": "2026-04-09T15:47:06.478405",
+  "end_time": "2026-04-09T15:49:02.768347",
+  "results": {
+    "Supplier Queries": {
+      "List suppliers for CYS20_F01C01": {
+        "status": "PASS",
+        "time_ms": 2401.6,
+        "answer_length": 241,
+        "answer": "\ud83d\udcca CYS20_F01C01: 15 records total, 0 changed (0.0%)\n\n\ud83c\udfe2 Suppliers (8):\n  \u2022 10_AMER\n  \u2022 130_AMER\n  \u2022 1690_AMER\n  \u2022 210_AMER\n  \u2022 320_AMER\n\n\ud83d\udca1 Insight: Low change rate (0.0%) indicates stable planning.\n\u2705 Action: Continue current planning approach.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "List suppliers for DSM18_F01C01": {
+        "status": "PASS",
+        "time_ms": 2427.1,
+        "answer_length": 242,
+        "answer": "\ud83d\udcca DSM18_F01C01: 15 records total, 0 changed (0.0%)\n\n\ud83c\udfe2 Suppliers (8):\n  \u2022 110_AMER\n  \u2022 1690_AMER\n  \u2022 170_AMER\n  \u2022 210_AMER\n  \u2022 530_AMER\n\n\ud83d\udca1 Insight: Low change rate (0.0%) indicates stable planning.\n\u2705 Action: Continue current planning approach.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which suppliers at CYS20_F01C01 have design changes?": {
+        "status": "PASS",
+        "time_ms": 2324.2,
+        "answer_length": 241,
+        "answer": "\ud83d\udcca CYS20_F01C01: 15 records total, 0 changed (0.0%)\n\n\ud83c\udfe2 Suppliers (8):\n  \u2022 10_AMER\n  \u2022 130_AMER\n  \u2022 1690_AMER\n  \u2022 210_AMER\n  \u2022 320_AMER\n\n\ud83d\udca1 Insight: Low change rate (0.0%) indicates stable planning.\n\u2705 Action: Continue current planning approach.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which supplier has the most impact?": {
+        "status": "FAIL",
+        "time_ms": 2401.9,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "supplier_query",
+        "data_mode": "unknown",
+        "error": null
+      }
+    },
+    "Comparison Queries": {
+      "Compare CYS20_F01C01 vs DSM18_F01C01": {
+        "status": "FAIL",
+        "time_ms": 2408.9,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "comparison",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "Compare CYS20_F01C01 vs AVC11_F01C01": {
+        "status": "FAIL",
+        "time_ms": 2458.2,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "comparison",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "Compare UPS vs MVSXRM": {
+        "status": "FAIL",
+        "time_ms": 2810.9,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "comparison",
+        "data_mode": "unknown",
+        "error": null
+      }
+    },
+    "Record Detail Queries": {
+      "What changed for C00000560-001?": {
+        "status": "FAIL",
+        "time_ms": 2432.6,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "record_detail",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "What changed for C00000560-001 at CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2378.5,
+        "answer_length": 155,
+        "answer": "\ud83d\udcca Global Metrics\n\nTotal Records: 13,148\nChanged: 5,150\nChange Rate: 39.2%\n\n\ud83d\udca1 Insight: 39.2% of records have changes.\n\u2705 Action: Review planning adjustments.",
+        "query_type": "record_detail",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Show current vs previous for C00000560-001": {
+        "status": "FAIL",
+        "time_ms": 2414.6,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "comparison",
+        "data_mode": "unknown",
+        "error": null
+      }
+    },
+    "Root Cause Queries": {
+      "Why is CYS20_F01C01 risky?": {
+        "status": "PASS",
+        "time_ms": 2464.4,
+        "answer_length": 227,
+        "answer": "\ud83d\udd0d Root Cause Analysis: CYS20_F01C01\n\nWhat changed:\n  \u2022 Primary driver: None\n  \u2022 Records affected: 0/15 (0.0%)\n\nWhy it matters:\n  \u2022 No changes detected - location is stable\n\nRecommended action:\n  \u2022 Monitor for emerging patterns\n",
+        "query_type": "root_cause",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Why is DSM18_F01C01 not risky?": {
+        "status": "PASS",
+        "time_ms": 2411.7,
+        "answer_length": 227,
+        "answer": "\ud83d\udd0d Root Cause Analysis: DSM18_F01C01\n\nWhat changed:\n  \u2022 Primary driver: None\n  \u2022 Records affected: 0/15 (0.0%)\n\nWhy it matters:\n  \u2022 No changes detected - location is stable\n\nRecommended action:\n  \u2022 Monitor for emerging patterns\n",
+        "query_type": "root_cause",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Why is planning health critical?": {
+        "status": "FAIL",
+        "time_ms": 2484.7,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "root_cause",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "What is driving the risk?": {
+        "status": "FAIL",
+        "time_ms": 2420.1,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "root_cause",
+        "data_mode": "unknown",
+        "error": null
+      }
+    },
+    "Traceability Queries": {
+      "Show top contributing records": {
+        "status": "PASS",
+        "time_ms": 2594.7,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which records have the most impact?": {
+        "status": "PASS",
+        "time_ms": 2598.8,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Show records with design changes": {
+        "status": "PASS",
+        "time_ms": 2565.0,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which records are highest risk?": {
+        "status": "PASS",
+        "time_ms": 2582.0,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    },
+    "Location Queries": {
+      "Which locations have the most changes?": {
+        "status": "PASS",
+        "time_ms": 2647.9,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which locations need immediate attention?": {
+        "status": "PASS",
+        "time_ms": 2536.9,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "What changed at DSM18_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2694.4,
+        "answer_length": 155,
+        "answer": "\ud83d\udcca Global Metrics\n\nTotal Records: 13,148\nChanged: 5,150\nChange Rate: 39.2%\n\n\ud83d\udca1 Insight: 39.2% of records have changes.\n\u2705 Action: Review planning adjustments.",
+        "query_type": "record_detail",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which locations are change hotspots?": {
+        "status": "PASS",
+        "time_ms": 2531.1,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    },
+    "Material Group Queries": {
+      "Which material groups changed the most?": {
+        "status": "PASS",
+        "time_ms": 2407.4,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "What changed in UPS?": {
+        "status": "FAIL",
+        "time_ms": 2437.4,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "record_detail",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "Which material groups have design changes?": {
+        "status": "PASS",
+        "time_ms": 2769.0,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which material groups are most impacted?": {
+        "status": "PASS",
+        "time_ms": 2449.9,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    },
+    "Forecast/Demand Queries": {
+      "Why did forecast increase by +50,980?": {
+        "status": "FAIL",
+        "time_ms": 2819.4,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "root_cause",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "Where are we seeing new demand surges?": {
+        "status": "PASS",
+        "time_ms": 2806.2,
+        "answer_length": 155,
+        "answer": "\ud83d\udcca Global Metrics\n\nTotal Records: 13,148\nChanged: 5,150\nChange Rate: 39.2%\n\n\ud83d\udca1 Insight: 39.2% of records have changes.\n\u2705 Action: Review planning adjustments.",
+        "query_type": "trend",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Is this demand-driven or design-driven?": {
+        "status": "PASS",
+        "time_ms": 2630.2,
+        "answer_length": 314,
+        "answer": "\ud83d\udd0d Root Cause Analysis: Global\n\nWhat changed:\n  \u2022 Primary driver: other\n  \u2022 Records affected: 5150/13148 (39.2%)\n\nWhy it matters:\n  \u2022 Other changes are the main driver\n  \u2022 Affects 39.2% of planning records\n\nRecommended action:\n  \u2022 Focus on other management\n  \u2022 Review supplier performance\n  \u2022 Monitor for escalation",
+        "query_type": "root_cause",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Show forecast trends": {
+        "status": "PASS",
+        "time_ms": 2617.0,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    },
+    "Design/BOD Queries": {
+      "Which materials have BOD changes?": {
+        "status": "PASS",
+        "time_ms": 2550.5,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which materials have Form Factor changes?": {
+        "status": "PASS",
+        "time_ms": 2537.2,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Any design changes at CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2573.9,
+        "answer_length": 200,
+        "answer": "\ud83d\udcca Planning Health Summary\n\nOverall Metrics:\n  \u2022 Total Records: 13,148\n  \u2022 Changed Records: 5,150\n  \u2022 Change Rate: 39.2%\n  \u2022 Locations: 1373\n\nStatus: \ud83d\udfe1 HIGH\n\nAction: Review planning adjustments needed.",
+        "query_type": "summary",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which supplier has the most design changes?": {
+        "status": "FAIL",
+        "time_ms": 2780.0,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "supplier_query",
+        "data_mode": "unknown",
+        "error": null
+      }
+    },
+    "Schedule/ROJ Queries": {
+      "Which locations have ROJ delays?": {
+        "status": "PASS",
+        "time_ms": 2625.5,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Which supplier is failing to meet ROJ dates?": {
+        "status": "FAIL",
+        "time_ms": 2776.0,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "supplier_query",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "Are there ROJ delays at DSM18_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2548.2,
+        "answer_length": 200,
+        "answer": "\ud83d\udcca Planning Health Summary\n\nOverall Metrics:\n  \u2022 Total Records: 13,148\n  \u2022 Changed Records: 5,150\n  \u2022 Change Rate: 39.2%\n  \u2022 Locations: 1373\n\nStatus: \ud83d\udfe1 HIGH\n\nAction: Review planning adjustments needed.",
+        "query_type": "summary",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Show schedule changes": {
+        "status": "PASS",
+        "time_ms": 2477.4,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    },
+    "Health/Status Queries": {
+      "What is the current planning health?": {
+        "status": "PASS",
+        "time_ms": 2500.2,
+        "answer_length": 200,
+        "answer": "\ud83d\udcca Planning Health Summary\n\nOverall Metrics:\n  \u2022 Total Records: 13,148\n  \u2022 Changed Records: 5,150\n  \u2022 Change Rate: 39.2%\n  \u2022 Locations: 1373\n\nStatus: \ud83d\udfe1 HIGH\n\nAction: Review planning adjustments needed.",
+        "query_type": "summary",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Why is planning health at 37/100?": {
+        "status": "FAIL",
+        "time_ms": 2473.1,
+        "answer_length": 0,
+        "answer": "",
+        "query_type": "root_cause",
+        "data_mode": "unknown",
+        "error": null
+      },
+      "What is the risk level?": {
+        "status": "PASS",
+        "time_ms": 2501.0,
+        "answer_length": 200,
+        "answer": "\ud83d\udcca Planning Health Summary\n\nOverall Metrics:\n  \u2022 Total Records: 13,148\n  \u2022 Changed Records: 5,150\n  \u2022 Change Rate: 39.2%\n  \u2022 Locations: 1373\n\nStatus: \ud83d\udfe1 HIGH\n\nAction: Review planning adjustments needed.",
+        "query_type": "summary",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "Show KPI summary": {
+        "status": "PASS",
+        "time_ms": 2472.7,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    },
+    "Action/Recommendation Queries": {
+      "What are the top planner actions?": {
+        "status": "PASS",
+        "time_ms": 2510.1,
+        "answer_length": 221,
+        "answer": "\ud83d\udcca Global Analysis: 13148 records total, 5150 changed (39.2%)\n\n\ud83c\udfe2 Top Suppliers by Impact:\n  \u2022 Unknown: 5150 changes (39.2%)\n\n\ud83d\udca1 Insight: Overall change rate is 39.2%.\n\u2705 Action: Review top suppliers for planning adjustments.",
+        "query_type": "list",
+        "data_mode": "reasoning",
+        "error": null
+      },
+      "What should be done for CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2548.1,
+        "answer_length": 200,
+        "answer": "\ud83d\udcca Planning Health Summary\n\nOverall Metrics:\n  \u2022 Total Records: 13,148\n  \u2022 Changed Records: 5,150\n  \u2022 Change Rate: 39.2%\n  \u2022 Locations: 1373\n\nStatus: \ud83d\udfe1 HIGH\n\nAction: Review planning adjustments needed.",
+        "query_type": "summary",
+        "data_mode": "reasoning",
+        "error": null
+      }
+    }
+  },
+  "failed_prompts": [
+    {
+      "prompt": "Which supplier has the most impact?",
+      "category": "Supplier Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Compare CYS20_F01C01 vs DSM18_F01C01",
+      "category": "Comparison Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Compare CYS20_F01C01 vs AVC11_F01C01",
+      "category": "Comparison Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Compare UPS vs MVSXRM",
+      "category": "Comparison Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "What changed for C00000560-001?",
+      "category": "Record Detail Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Show current vs previous for C00000560-001",
+      "category": "Record Detail Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Why is planning health critical?",
+      "category": "Root Cause Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "What is driving the risk?",
+      "category": "Root Cause Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "What changed in UPS?",
+      "category": "Material Group Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Why did forecast increase by +50,980?",
+      "category": "Forecast/Demand Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Which supplier has the most design changes?",
+      "category": "Design/BOD Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Which supplier is failing to meet ROJ dates?",
+      "category": "Schedule/ROJ Queries",
+      "error": "Response too short or generic"
+    },
+    {
+      "prompt": "Why is planning health at 37/100?",
+      "category": "Health/Status Queries",
+      "error": "Response too short or generic"
+    }
+  ]
+}

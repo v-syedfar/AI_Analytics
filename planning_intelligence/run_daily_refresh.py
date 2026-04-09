@@ -1,6 +1,6 @@
 """
 Daily Refresh Job
-Reads Excel files from Azure Blob Storage (default) or SharePoint (optional legacy),
+Reads CSV/Excel files from Azure Blob Storage,
 runs the full analytics pipeline, builds the dashboard response, and saves a snapshot.
 
 Can be triggered:
@@ -11,9 +11,29 @@ Can be triggered:
 import logging
 import os
 import sys
+import json
 
 # Allow running standalone
 sys.path.insert(0, os.path.dirname(__file__))
+
+# Load local.settings.json if running standalone (not in Azure Functions)
+def _load_local_settings():
+    """Load environment variables from local.settings.json for local development."""
+    settings_path = os.path.join(os.path.dirname(__file__), "local.settings.json")
+    if os.path.exists(settings_path):
+        try:
+            with open(settings_path, "r") as f:
+                settings = json.load(f)
+                # Load Values section into environment
+                for key, value in settings.get("Values", {}).items():
+                    if key not in os.environ:
+                        os.environ[key] = value
+                logging.info(f"Loaded environment variables from {settings_path}")
+        except Exception as e:
+            logging.warning(f"Could not load local.settings.json: {e}")
+
+# Load settings before importing modules that need them
+_load_local_settings()
 
 from normalizer import normalize_rows
 from filters import filter_records
@@ -28,29 +48,24 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 def run_daily_refresh(
     location_id: str = None,
     material_group: str = None,
-    source: str = "blob",  # "blob" is the default — SharePoint kept for backward compat
 ) -> dict:
     """
-    Full pipeline:
-    1. Load current + previous from Blob Storage (default) or SharePoint
+    Full pipeline — Blob Storage only:
+    1. Load current + previous from Azure Blob Storage
     2. Normalize → Filter → Compare
     3. Build dashboard response
     4. Save snapshot
     Returns the dashboard response dict.
     """
-    logger.info(f"Starting daily planning refresh (source={source})...")
+    logger.info("Starting daily planning refresh from Blob Storage...")
 
-    # Step 1: Load data
+    # Step 1: Load data from Blob
     try:
-        if source == "sharepoint":
-            from sharepoint_loader import load_current_previous_from_sharepoint
-            current_rows, previous_rows = load_current_previous_from_sharepoint()
-        else:
-            from blob_loader import load_current_previous_from_blob
-            current_rows, previous_rows = load_current_previous_from_blob()
+        from blob_loader import load_current_previous_from_blob
+        current_rows, previous_rows = load_current_previous_from_blob()
         logger.info(f"Loaded {len(current_rows)} current rows, {len(previous_rows)} previous rows.")
     except Exception as e:
-        logger.error(f"Data load failed: {e}")
+        logger.error(f"Blob data load failed: {e}")
         raise
 
     # Step 2: Normalize

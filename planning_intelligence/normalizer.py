@@ -43,6 +43,13 @@ def _safe_float(val: Any) -> Optional[float]:
         return None
 
 
+def _safe_bool(val: Any) -> bool:
+    if val is None:
+        return False
+    s = str(val).strip().lower()
+    return s in ("true", "1", "yes", "y")
+
+
 def normalize_row(raw: dict, is_current: bool = True) -> PlanningRecord:
     """
     Normalize a raw Excel row dict into a PlanningRecord.
@@ -84,6 +91,13 @@ def normalize_row(raw: dict, is_current: bool = True) -> PlanningRecord:
         last_modified_date=_safe_str(raw.get("LASTMODIFIEDDATE")),
         created_by=_safe_str(raw.get("CREATEDBY")),
         created_date=_safe_str(raw.get("CREATEDDATE")),
+        # Pre-computed CSV flags
+        is_new_demand=_safe_bool(raw.get("IS_NEW DEMAND") or raw.get("IS_NEW_DEMAND")),
+        is_cancelled=_safe_bool(raw.get("IS_CANCELLED")),
+        risk_flag=_safe_str(raw.get("RISK_FLAG")),
+        fcst_delta_qty=_safe_float(raw.get("FCST_DELTA QTY") or raw.get("FCST_DELTA_QTY")),
+        nbd_delta_days=_safe_float(raw.get("NBD_DELTADAYS")),
+        is_supplier_date_missing=_safe_bool(raw.get("IS_SUPPLIERDATEMISSING")),
     )
 
 

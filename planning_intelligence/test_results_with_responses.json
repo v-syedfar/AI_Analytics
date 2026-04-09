@@ -1,0 +1,430 @@
+{
+  "total": 44,
+  "passed": 44,
+  "failed": 0,
+  "pass_rate": 100.0,
+  "timestamp": "2026-04-09T08:05:22.369509",
+  "results": {
+    "Supplier Queries": {
+      "List suppliers for CYS20_F01C01": {
+        "status": "PASS",
+        "time_ms": 2354.0,
+        "answer_length": 241,
+        "answer": "\ud83d\udcca CYS20_F01C01: 15 records total, 0 changed (0.0%)\n\n\ud83c\udfe2 Suppliers (8):\n  \u2022 10_AMER\n  \u2022 130_AMER\n  \u2022 1690_AMER\n  \u2022 210_AMER\n  \u2022 320_AMER\n\n\ud83d\udca1 Insight: Low change rate (0.0%) indicates stable planning.\n\u2705 Action: Continue current planning approach.",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "List suppliers for DSM18_F01C01": {
+        "status": "PASS",
+        "time_ms": 2302.9,
+        "answer_length": 242,
+        "answer": "\ud83d\udcca DSM18_F01C01: 15 records total, 0 changed (0.0%)\n\n\ud83c\udfe2 Suppliers (8):\n  \u2022 110_AMER\n  \u2022 1690_AMER\n  \u2022 170_AMER\n  \u2022 210_AMER\n  \u2022 530_AMER\n\n\ud83d\udca1 Insight: Low change rate (0.0%) indicates stable planning.\n\u2705 Action: Continue current planning approach.",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which suppliers at CYS20_F01C01 have design changes?": {
+        "status": "PASS",
+        "time_ms": 2312.2,
+        "answer_length": 241,
+        "answer": "\ud83d\udcca CYS20_F01C01: 15 records total, 0 changed (0.0%)\n\n\ud83c\udfe2 Suppliers (8):\n  \u2022 10_AMER\n  \u2022 130_AMER\n  \u2022 1690_AMER\n  \u2022 210_AMER\n  \u2022 320_AMER\n\n\ud83d\udca1 Insight: Low change rate (0.0%) indicates stable planning.\n\u2705 Action: Continue current planning approach.",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which supplier has the most impact?": {
+        "status": "PASS",
+        "time_ms": 2291.3,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Comparison Queries": {
+      "Compare CYS20_F01C01 vs DSM18_F01C01": {
+        "status": "PASS",
+        "time_ms": 2318.8,
+        "answer_length": 551,
+        "answer": "\ud83d\udcca Comparison: CYS20_F01C01 vs DSM18_F01C01\n\nMetric                    CYS20_F01C01    DSM18_F01C01   \n--------------------------------------------------\nTotal records             15              15             \nChanged                   0               0              \nChange rate               0.0           % 0.0           %\nDesign changes            0               0              \nForecast delta            0               0              \n\n\ud83d\udca1 Insight: Both have similar change rates.\n\u2705 Action: Focus attention on DSM18_F01C01 for change management.",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Compare CYS20_F01C01 vs AVC11_F01C01": {
+        "status": "PASS",
+        "time_ms": 2326.4,
+        "answer_length": 575,
+        "answer": "\ud83d\udcca Comparison: CYS20_F01C01 vs AVC11_F01C01\n\nMetric                    CYS20_F01C01    AVC11_F01C01   \n--------------------------------------------------\nTotal records             15              14             \nChanged                   0               14             \nChange rate               0.0           % 100.0         %\nDesign changes            0               14             \nForecast delta            0               -14.0          \n\n\ud83d\udca1 Insight: AVC11_F01C01 has 100.0% more changes than CYS20_F01C01.\n\u2705 Action: Focus attention on AVC11_F01C01 for change management.",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Compare UPS vs MVSXRM": {
+        "status": "PASS",
+        "time_ms": 2284.5,
+        "answer_length": 534,
+        "answer": "\ud83d\udcca Comparison: UPS vs MVSXRM\n\nMetric                    UPS             MVSXRM         \n--------------------------------------------------\nTotal records             1248            1223           \nChanged                   461             428            \nChange rate               36.9          % 35.0          %\nDesign changes            178             152            \nForecast delta            347.0           60.0           \n\n\ud83d\udca1 Insight: UPS has 1.9% more changes than MVSXRM.\n\u2705 Action: Focus attention on UPS for change management.",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Record Detail Queries": {
+      "What changed for C00000560-001?": {
+        "status": "PASS",
+        "time_ms": 2293.2,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "What changed for C00000560-001 at CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2314.3,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Show current vs previous for C00000560-001": {
+        "status": "PASS",
+        "time_ms": 2297.5,
+        "answer_length": 57,
+        "answer": "Cannot compare: insufficient data for CURRENT or PREVIOUS",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Root Cause Queries": {
+      "Why is CYS20_F01C01 risky?": {
+        "status": "PASS",
+        "time_ms": 2290.5,
+        "answer_length": 227,
+        "answer": "\ud83d\udd0d Root Cause Analysis: CYS20_F01C01\n\nWhat changed:\n  \u2022 Primary driver: None\n  \u2022 Records affected: 0/15 (0.0%)\n\nWhy it matters:\n  \u2022 No changes detected - location is stable\n\nRecommended action:\n  \u2022 Monitor for emerging patterns\n",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Why is DSM18_F01C01 not risky?": {
+        "status": "PASS",
+        "time_ms": 2296.9,
+        "answer_length": 227,
+        "answer": "\ud83d\udd0d Root Cause Analysis: DSM18_F01C01\n\nWhat changed:\n  \u2022 Primary driver: None\n  \u2022 Records affected: 0/15 (0.0%)\n\nWhy it matters:\n  \u2022 No changes detected - location is stable\n\nRecommended action:\n  \u2022 Monitor for emerging patterns\n",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Why is planning health critical?": {
+        "status": "PASS",
+        "time_ms": 2309.2,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "What is driving the risk?": {
+        "status": "PASS",
+        "time_ms": 2275.3,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Traceability Queries": {
+      "Show top contributing records": {
+        "status": "PASS",
+        "time_ms": 2309.8,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which records have the most impact?": {
+        "status": "PASS",
+        "time_ms": 2300.9,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Show records with design changes": {
+        "status": "PASS",
+        "time_ms": 2315.8,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which records are highest risk?": {
+        "status": "PASS",
+        "time_ms": 2362.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Location Queries": {
+      "Which locations have the most changes?": {
+        "status": "PASS",
+        "time_ms": 2333.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which locations need immediate attention?": {
+        "status": "PASS",
+        "time_ms": 2321.2,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "What changed at DSM18_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2313.4,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which locations are change hotspots?": {
+        "status": "PASS",
+        "time_ms": 2309.9,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Material Group Queries": {
+      "Which material groups changed the most?": {
+        "status": "PASS",
+        "time_ms": 2301.1,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "What changed in UPS?": {
+        "status": "PASS",
+        "time_ms": 2320.1,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which material groups have design changes?": {
+        "status": "PASS",
+        "time_ms": 2288.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which material groups are most impacted?": {
+        "status": "PASS",
+        "time_ms": 2313.9,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Forecast/Demand Queries": {
+      "Why did forecast increase by +50,980?": {
+        "status": "PASS",
+        "time_ms": 2319.1,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Where are we seeing new demand surges?": {
+        "status": "PASS",
+        "time_ms": 2303.3,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Is this demand-driven or design-driven?": {
+        "status": "PASS",
+        "time_ms": 2289.3,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Show forecast trends": {
+        "status": "PASS",
+        "time_ms": 2315.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Design/BOD Queries": {
+      "Which materials have BOD changes?": {
+        "status": "PASS",
+        "time_ms": 2303.9,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which materials have Form Factor changes?": {
+        "status": "PASS",
+        "time_ms": 2320.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Any design changes at CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2305.9,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which supplier has the most design changes?": {
+        "status": "PASS",
+        "time_ms": 2316.1,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Schedule/ROJ Queries": {
+      "Which locations have ROJ delays?": {
+        "status": "PASS",
+        "time_ms": 2302.1,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Which supplier is failing to meet ROJ dates?": {
+        "status": "PASS",
+        "time_ms": 2289.5,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Are there ROJ delays at DSM18_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2283.5,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Show schedule changes": {
+        "status": "PASS",
+        "time_ms": 2299.9,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Health/Status Queries": {
+      "What is the current planning health?": {
+        "status": "PASS",
+        "time_ms": 2295.7,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Why is planning health at 37/100?": {
+        "status": "PASS",
+        "time_ms": 2304.8,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "What is the risk level?": {
+        "status": "PASS",
+        "time_ms": 2312.5,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "Show KPI summary": {
+        "status": "PASS",
+        "time_ms": 2289.5,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    },
+    "Action/Recommendation Queries": {
+      "What are the top planner actions?": {
+        "status": "PASS",
+        "time_ms": 2294.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      },
+      "What should be done for CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2340.0,
+        "answer_length": 292,
+        "answer": "I need more context to answer accurately.\n\nPlease specify:\n  \u2022 Location (e.g., CYS20_F01C01)\n  \u2022 Or Material ID (e.g., C00000560-001)\n  \u2022 Or Material Group (e.g., UPS)\n\nExamples:\n  \u2022 'List suppliers for CYS20_F01C01'\n  \u2022 'Why is CYS20_F01C01 risky?'\n  \u2022 'Compare CYS20_F01C01 vs DSM18_F01C01'",
+        "query_type": "unknown",
+        "answer_mode": "unknown",
+        "error": null
+      }
+    }
+  },
+  "failed_prompts": []
+}

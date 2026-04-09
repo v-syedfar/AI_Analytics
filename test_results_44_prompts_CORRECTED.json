@@ -1,0 +1,384 @@
+{
+  "total": 44,
+  "passed": 35,
+  "failed": 9,
+  "pass_rate": 79.5,
+  "results": {
+    "Supplier Queries": {
+      "List suppliers for CYS20_F01C01": {
+        "status": "PASS",
+        "time_ms": 2910.0,
+        "answer_length": 892,
+        "query_type": "supplier_by_location",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "List suppliers for DSM18_F01C01": {
+        "status": "PASS",
+        "time_ms": 2404.5,
+        "answer_length": 892,
+        "query_type": "supplier_by_location",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which suppliers at CYS20_F01C01 have design changes?": {
+        "status": "PASS",
+        "time_ms": 2277.1,
+        "answer_length": 892,
+        "query_type": "supplier_by_location",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which supplier has the most impact?": {
+        "status": "FAIL",
+        "time_ms": 2201.2,
+        "answer_length": 47,
+        "query_type": "supplier_by_location",
+        "answer_mode": "investigate",
+        "error": null
+      }
+    },
+    "Comparison Queries": {
+      "Compare CYS20_F01C01 vs DSM18_F01C01": {
+        "status": "PASS",
+        "time_ms": 2157.8,
+        "answer_length": 556,
+        "query_type": "comparison",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Compare CYS20_F01C01 vs AVC11_F01C01": {
+        "status": "PASS",
+        "time_ms": 2160.7,
+        "answer_length": 556,
+        "query_type": "comparison",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Compare UPS vs MVSXRM": {
+        "status": "PASS",
+        "time_ms": 2238.2,
+        "answer_length": 549,
+        "query_type": "comparison",
+        "answer_mode": "investigate",
+        "error": null
+      }
+    },
+    "Record Detail Queries": {
+      "What changed for C00000560-001?": {
+        "status": "FAIL",
+        "time_ms": 2321.1,
+        "answer_length": 43,
+        "query_type": "record_detail",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "What changed for C00000560-001 at CYS20_F01C01?": {
+        "status": "FAIL",
+        "time_ms": 2344.6,
+        "answer_length": 43,
+        "query_type": "record_detail",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Show current vs previous for C00000560-001": {
+        "status": "PASS",
+        "time_ms": 2261.1,
+        "answer_length": 573,
+        "query_type": "comparison",
+        "answer_mode": "investigate",
+        "error": null
+      }
+    },
+    "Root Cause Queries": {
+      "Why is CYS20_F01C01 risky?": {
+        "status": "PASS",
+        "time_ms": 2213.9,
+        "answer_length": 317,
+        "query_type": "root_cause",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Why is DSM18_F01C01 not risky?": {
+        "status": "PASS",
+        "time_ms": 2189.9,
+        "answer_length": 219,
+        "query_type": "why_not",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Why is planning health critical?": {
+        "status": "FAIL",
+        "time_ms": 2194.5,
+        "answer_length": 47,
+        "query_type": "root_cause",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "What is driving the risk?": {
+        "status": "PASS",
+        "time_ms": 2154.8,
+        "answer_length": 94,
+        "query_type": "risk",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Traceability Queries": {
+      "Show top contributing records": {
+        "status": "PASS",
+        "time_ms": 2208.9,
+        "answer_length": 641,
+        "query_type": "traceability",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which records have the most impact?": {
+        "status": "PASS",
+        "time_ms": 2159.0,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Show records with design changes": {
+        "status": "PASS",
+        "time_ms": 2209.3,
+        "answer_length": 641,
+        "query_type": "traceability",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which records are highest risk?": {
+        "status": "PASS",
+        "time_ms": 2149.5,
+        "answer_length": 94,
+        "query_type": "risk",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Location Queries": {
+      "Which locations have the most changes?": {
+        "status": "PASS",
+        "time_ms": 2150.4,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Which locations need immediate attention?": {
+        "status": "PASS",
+        "time_ms": 2162.0,
+        "answer_length": 129,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "What changed at DSM18_F01C01?": {
+        "status": "FAIL",
+        "time_ms": 2257.5,
+        "answer_length": 40,
+        "query_type": "record_detail",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which locations are change hotspots?": {
+        "status": "PASS",
+        "time_ms": 2135.9,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Material Group Queries": {
+      "Which material groups changed the most?": {
+        "status": "PASS",
+        "time_ms": 2152.7,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "What changed in UPS?": {
+        "status": "FAIL",
+        "time_ms": 2288.1,
+        "answer_length": 40,
+        "query_type": "record_detail",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which material groups have design changes?": {
+        "status": "PASS",
+        "time_ms": 2248.7,
+        "answer_length": 1931,
+        "query_type": "design_filter",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which material groups are most impacted?": {
+        "status": "PASS",
+        "time_ms": 2137.5,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Forecast/Demand Queries": {
+      "Why did forecast increase by +50,980?": {
+        "status": "PASS",
+        "time_ms": 2156.1,
+        "answer_length": 83,
+        "query_type": "root_cause",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Where are we seeing new demand surges?": {
+        "status": "PASS",
+        "time_ms": 2148.3,
+        "answer_length": 83,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Is this demand-driven or design-driven?": {
+        "status": "PASS",
+        "time_ms": 2143.4,
+        "answer_length": 83,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Show forecast trends": {
+        "status": "PASS",
+        "time_ms": 2134.9,
+        "answer_length": 83,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Design/BOD Queries": {
+      "Which materials have BOD changes?": {
+        "status": "PASS",
+        "time_ms": 2274.8,
+        "answer_length": 1931,
+        "query_type": "design_filter",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Which materials have Form Factor changes?": {
+        "status": "PASS",
+        "time_ms": 2265.7,
+        "answer_length": 1931,
+        "query_type": "design_filter",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Any design changes at CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2140.9,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Which supplier has the most design changes?": {
+        "status": "FAIL",
+        "time_ms": 2306.3,
+        "answer_length": 47,
+        "query_type": "supplier_by_location",
+        "answer_mode": "investigate",
+        "error": null
+      }
+    },
+    "Schedule/ROJ Queries": {
+      "Which locations have ROJ delays?": {
+        "status": "PASS",
+        "time_ms": 2129.6,
+        "answer_length": 129,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Which supplier is failing to meet ROJ dates?": {
+        "status": "FAIL",
+        "time_ms": 2255.2,
+        "answer_length": 47,
+        "query_type": "supplier_by_location",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "Are there ROJ delays at DSM18_F01C01?": {
+        "status": "FAIL",
+        "time_ms": 2133.5,
+        "answer_length": 26,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Show schedule changes": {
+        "status": "PASS",
+        "time_ms": 2142.6,
+        "answer_length": 159,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Health/Status Queries": {
+      "What is the current planning health?": {
+        "status": "PASS",
+        "time_ms": 2155.4,
+        "answer_length": 187,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Why is planning health at 37/100?": {
+        "status": "PASS",
+        "time_ms": 2212.1,
+        "answer_length": 306,
+        "query_type": "root_cause",
+        "answer_mode": "investigate",
+        "error": null
+      },
+      "What is the risk level?": {
+        "status": "PASS",
+        "time_ms": 2181.2,
+        "answer_length": 94,
+        "query_type": "risk",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "Show KPI summary": {
+        "status": "PASS",
+        "time_ms": 2149.5,
+        "answer_length": 153,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      }
+    },
+    "Action/Recommendation Queries": {
+      "What are the top planner actions?": {
+        "status": "PASS",
+        "time_ms": 2215.1,
+        "answer_length": 381,
+        "query_type": "action",
+        "answer_mode": "summary",
+        "error": null
+      },
+      "What should be done for CYS20_F01C01?": {
+        "status": "PASS",
+        "time_ms": 2138.2,
+        "answer_length": 288,
+        "query_type": "summary",
+        "answer_mode": "summary",
+        "error": null
+      }
+    }
+  }
+}

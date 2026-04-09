@@ -18,9 +18,10 @@ interface Props {
     designChangedCount: number;
     rojChangedCount: number;
   };
+  onRiskClick?: (riskLevel: string) => void;
 }
 
-export const RiskCard: React.FC<Props> = ({ riskSummary }) => {
+export const RiskCard: React.FC<Props> = ({ riskSummary, onRiskClick }) => {
   const color = riskColor[riskSummary.highestRiskLevel] || "text-gray-400";
   return (
     <div className="bg-card border border-border rounded-2xl p-6">
@@ -34,7 +35,11 @@ export const RiskCard: React.FC<Props> = ({ riskSummary }) => {
       </div>
       <div className="flex flex-col gap-2">
         {Object.entries(riskSummary.riskBreakdown).map(([level, count]) => (
-          <div key={level} className="flex justify-between text-sm">
+          <div
+            key={level}
+            className={`flex justify-between text-sm ${onRiskClick ? "cursor-pointer hover:bg-white/5 -mx-2 px-2 py-0.5 rounded transition" : ""}`}
+            onClick={() => onRiskClick?.(level)}
+          >
             <span className={riskColor[level] || "text-gray-400"}>{level}</span>
             <span className="text-white font-semibold">{count}</span>
           </div>
@@ -43,8 +48,3 @@ export const RiskCard: React.FC<Props> = ({ riskSummary }) => {
     </div>
   );
 };
-
-
-
-
-

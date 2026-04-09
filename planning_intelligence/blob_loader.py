@@ -1,13 +1,15 @@
 """
 Azure Blob Storage Loader
-Downloads current.xlsx and previous.xlsx from Azure Blob Storage
+Downloads current and previous data files from Azure Blob Storage
 and returns normalized row dicts ready for the analytics pipeline.
+
+Supports: .xlsx, .xls, .csv
 
 Required environment variables:
   BLOB_CONNECTION_STRING   Azure Storage connection string
   BLOB_CONTAINER_NAME      Container name (default: planning-data)
-  BLOB_CURRENT_FILE        Blob name for current file (default: current.xlsx)
-  BLOB_PREVIOUS_FILE       Blob name for previous file (default: previous.xlsx)
+  BLOB_CURRENT_FILE        Blob name for current file (default: current.csv)
+  BLOB_PREVIOUS_FILE       Blob name for previous file (default: previous.csv)
 """
 import io
 import os
@@ -28,8 +30,8 @@ COLUMN_ALIASES = {
 
 # Defaults — override via env vars
 DEFAULT_CONTAINER = "planning-data"
-DEFAULT_CURRENT_BLOB = "current.xlsx"
-DEFAULT_PREVIOUS_BLOB = "previous.xlsx"
+DEFAULT_CURRENT_BLOB = "current.csv"
+DEFAULT_PREVIOUS_BLOB = "previous.csv"
 
 
 # ---------------------------------------------------------------------------
@@ -38,7 +40,7 @@ DEFAULT_PREVIOUS_BLOB = "previous.xlsx"
 
 def load_current_previous_from_blob() -> tuple:
     """
-    Downloads current.xlsx and previous.xlsx from Azure Blob Storage.
+    Downloads current and previous data files from Azure Blob Storage.
     Returns (current_rows, previous_rows) as list[dict].
     Raises BlobLoaderError on any failure.
     """
@@ -50,8 +52,8 @@ def load_current_previous_from_blob() -> tuple:
     current_bytes = download_blob(connection_string, container, current_blob)
     previous_bytes = download_blob(connection_string, container, previous_blob)
 
-    current_df = load_excel_from_bytes(current_bytes, label="current")
-    previous_df = load_excel_from_bytes(previous_bytes, label="previous")
+    current_df = load_file_from_bytes(current_bytes, label="current", filename=current_blob)
+    previous_df = load_file_from_bytes(previous_bytes, label="previous", filename=previous_blob)
 
     current_df = standardize_columns(current_df)
     previous_df = standardize_columns(previous_df)
@@ -89,11 +91,11 @@ def download_blob(connection_string: str, container: str, blob_name: str) -> byt
 
 
 # ---------------------------------------------------------------------------
-# Load Excel from bytes
+# Load file from bytes (CSV or Excel)
 # ---------------------------------------------------------------------------
 
-def load_excel_from_bytes(content: bytes, label: str = "file"):
-    """Loads Excel bytes into a pandas DataFrame."""
+def load_file_from_bytes(content: bytes, label: str = "file", filename: str = "") -> "pd.DataFrame":
+    """Loads CSV or Excel bytes into a pandas DataFrame."""
     try:
         import pandas as pd
     except ImportError:
@@ -102,17 +104,31 @@ def load_excel_from_bytes(content: bytes, label: str = "file"):
     if not content:
         raise BlobLoaderError(f"Empty file content for {label}.")
 
+    fname = filename.lower()
+
     try:
-        df = pd.read_excel(io.BytesIO(content), dtype=str)
+        if fname.endswith(".csv"):
+            # Try UTF-8 first, fall back to latin-1 for special characters
+            try:
+                df = pd.read_csv(io.BytesIO(content), dtype=str, encoding='utf-8')
+            except UnicodeDecodeError:
+                df = pd.read_csv(io.BytesIO(content), dtype=str, encoding='latin-1')
+        else:
+            # Try openpyxl first (.xlsx), then xlrd (.xls)
+            try:
+                df = pd.read_excel(io.BytesIO(content), dtype=str, engine='openpyxl')
+            except Exception:
+                df = pd.read_excel(io.BytesIO(content), dtype=str, engine='xlrd')
+
         df = df.fillna("")
         if df.empty:
-            raise BlobLoaderError(f"Excel sheet is empty: {label}")
+            raise BlobLoaderError(f"File is empty: {label}")
         logger.info(f"Loaded {label}: {len(df)} rows, {len(df.columns)} columns")
         return df
     except BlobLoaderError:
         raise
     except Exception as e:
-        raise BlobLoaderError(f"Failed to parse Excel ({label}): {e}")
+        raise BlobLoaderError(f"Failed to parse file ({label}): {e}")
 
 
 # ---------------------------------------------------------------------------

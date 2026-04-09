@@ -1,18 +1,25 @@
 import React from "react";
 import { SupplierDetail } from "../types/dashboard";
 
-interface Props { supplierSummary: { changed: number; topSupplier: string | null; details: SupplierDetail[] }; }
+interface Props {
+  supplierSummary: { changed: number; topSupplier: string | null; details: SupplierDetail[] };
+  onSupplierClick?: (supplier: string) => void;
+}
 
-export const SupplierCard: React.FC<Props> = ({ supplierSummary }) => (
+export const SupplierCard: React.FC<Props> = ({ supplierSummary, onSupplierClick }) => (
   <div className="bg-card border border-border rounded-2xl p-6">
     <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Supplier Changes</p>
     {!supplierSummary.details.length
       ? <p className="text-gray-500 text-sm">No supplier changes detected.</p>
       : supplierSummary.details.map((s, i) => (
-        <div key={i} className="border-b border-gray-800 pb-3 last:border-0 last:pb-0 mb-3">
+        <div
+          key={i}
+          className={`border-b border-gray-800 pb-3 last:border-0 last:pb-0 mb-3 ${onSupplierClick ? "cursor-pointer hover:bg-white/5 -mx-2 px-2 py-1 rounded-lg transition" : ""}`}
+          onClick={() => onSupplierClick?.(s.supplier)}
+        >
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm font-semibold text-white">{s.supplier}</p>
+              <p className={`text-sm font-semibold ${onSupplierClick ? "text-yellow-400 hover:underline" : "text-white"}`}>{s.supplier}</p>
               {s.previousSupplier && s.previousSupplier !== s.supplier &&
                 <p className="text-xs text-gray-500">from {s.previousSupplier}</p>}
               <p className="text-xs text-gray-500 mt-1">{s.affectedMaterials.length} material(s)</p>
@@ -24,8 +31,3 @@ export const SupplierCard: React.FC<Props> = ({ supplierSummary }) => (
     }
   </div>
 );
-
-
-
-
-

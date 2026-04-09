@@ -1,0 +1,43 @@
+================================================================================
+AZURE OPENAI PROMPT & RESPONSE REVIEW REPORT
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Prompts Sent: 2
+Total Responses Received: 2
+Validation Passed: 2
+Validation Failed: 0
+
+PROMPTS SENT TO AZURE OPENAI
+--------------------------------------------------------------------------------
+
+Prompt #1
+Type: test_type_1
+Timestamp: 2026-04-09T16:35:29.808768
+Content:
+Test prompt 1
+
+Prompt #2
+Type: test_type_2
+Timestamp: 2026-04-09T16:35:29.808778
+Content:
+Test prompt 2
+
+================================================================================
+RESPONSES FROM AZURE OPENAI
+--------------------------------------------------------------------------------
+
+Response #1
+Prompt ID: 0
+Timestamp: 2026-04-09T16:35:29.808775
+Validation: PASSED
+Content:
+Test response 1
+
+Response #2
+Prompt ID: 1
+Timestamp: 2026-04-09T16:35:29.808782
+Validation: PASSED
+Content:
+Test response 2

@@ -1,0 +1,626 @@
+================================================================================
+AZURE OPENAI PROMPT & RESPONSE REVIEW REPORT
+================================================================================
+
+SUMMARY
+--------------------------------------------------------------------------------
+Total Prompts Sent: 35
+Total Responses Received: 35
+Validation Passed: 35
+Validation Failed: 0
+
+PROMPTS SENT TO AZURE OPENAI
+--------------------------------------------------------------------------------
+
+Prompt #1
+Type: intent_extraction
+Timestamp: 2026-04-09T16:51:34.283041
+Content:
+Extract intent from: Why is LOC001 risky?
+Context: {'question': 'Why is LOC001 risky?'}
+
+Prompt #2
+Type: intent_extraction
+Timestamp: 2026-04-09T16:51:34.283487
+Content:
+Extract intent from: Compare LOC001 vs LOC002
+Context: {'question': 'Compare LOC001 vs LOC002'}
+
+Prompt #3
+Type: intent_extraction
+Timestamp: 2026-04-09T16:51:34.283500
+Content:
+Extract intent from: Why is LOC002 not risky?
+Context: {'question': 'Why is LOC002 not risky?'}
+
+Prompt #4
+Type: intent_extraction
+Timestamp: 2026-04-09T16:51:34.283507
+Content:
+Extract intent from: Show top contributing records
+Context: {'question': 'Show top contributing records'}
+
+Prompt #5
+Type: intent_extraction
+Timestamp: 2026-04-09T16:51:34.283839
+Content:
+Extract intent from: Which supplier has design changes?
+Context: {'question': 'Which supplier has design changes?'}
+
+Prompt #6
+Type: entity_extraction
+Timestamp: 2026-04-09T16:51:34.283858
+Content:
+Extract entities from: Why is LOC001 risky?
+Context: {'question': 'Why is LOC001 risky?'}
+
+Prompt #7
+Type: entity_extraction
+Timestamp: 2026-04-09T16:51:34.283865
+Content:
+Extract entities from: Compare LOC001 vs LOC002
+Context: {'question': 'Compare LOC001 vs LOC002'}
+
+Prompt #8
+Type: entity_extraction
+Timestamp: 2026-04-09T16:51:34.283872
+Content:
+Extract entities from: Which supplier SUP001 has issues?
+Context: {'question': 'Which supplier SUP001 has issues?'}
+
+Prompt #9
+Type: entity_extraction
+Timestamp: 2026-04-09T16:51:34.283880
+Content:
+Extract entities from: Show materials in UPS category
+Context: {'question': 'Show materials in UPS category'}
+
+Prompt #10
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283895
+Content:
+Compute metrics for location=LOC001
+Context: {'scope_type': 'location', 'scope_value': 'LOC001'}
+
+Prompt #11
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283933
+Content:
+Compute metrics for location=LOC002
+Context: {'scope_type': 'location', 'scope_value': 'LOC002'}
+
+Prompt #12
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283947
+Content:
+Compute metrics for location=LOC003
+Context: {'scope_type': 'location', 'scope_value': 'LOC003'}
+
+Prompt #13
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283960
+Content:
+Compute metrics for supplier=SUP001
+Context: {'scope_type': 'supplier', 'scope_value': 'SUP001'}
+
+Prompt #14
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283975
+Content:
+Compute metrics for supplier=SUP002
+Context: {'scope_type': 'supplier', 'scope_value': 'SUP002'}
+
+Prompt #15
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283983
+Content:
+Compute metrics for material_group=UPS
+Context: {'scope_type': 'material_group', 'scope_value': 'UPS'}
+
+Prompt #16
+Type: scoped_metrics
+Timestamp: 2026-04-09T16:51:34.283994
+Content:
+Compute metrics for material_group=PUMP
+Context: {'scope_type': 'material_group', 'scope_value': 'PUMP'}
+
+Prompt #17
+Type: comparison_response
+Timestamp: 2026-04-09T16:51:34.284011
+Content:
+Generate comparison for: Compare LOC001 vs LOC002
+Context: {'question': 'Compare LOC001 vs LOC002'}
+
+Prompt #18
+Type: comparison_response
+Timestamp: 2026-04-09T16:51:34.284458
+Content:
+Generate comparison for: Compare LOC001 vs LOC003
+Context: {'question': 'Compare LOC001 vs LOC003'}
+
+Prompt #19
+Type: comparison_response
+Timestamp: 2026-04-09T16:51:34.284503
+Content:
+Generate comparison for: Compare SUP001 vs SUP002
+Context: {'question': 'Compare SUP001 vs SUP002'}
+
+Prompt #20
+Type: root_cause_response
+Timestamp: 2026-04-09T16:51:34.284548
+Content:
+Generate root cause for: Why is LOC001 risky?
+Context: {'question': 'Why is LOC001 risky?'}
+
+Prompt #21
+Type: root_cause_response
+Timestamp: 2026-04-09T16:51:34.284576
+Content:
+Generate root cause for: Why is LOC003 risky?
+Context: {'question': 'Why is LOC003 risky?'}
+
+Prompt #22
+Type: root_cause_response
+Timestamp: 2026-04-09T16:51:34.284600
+Content:
+Generate root cause for: Why is SUP001 having issues?
+Context: {'question': 'Why is SUP001 having issues?'}
+
+Prompt #23
+Type: why_not_response
+Timestamp: 2026-04-09T16:51:34.284625
+Content:
+Generate why-not for: Why is LOC002 not risky?
+Context: {'question': 'Why is LOC002 not risky?'}
+
+Prompt #24
+Type: why_not_response
+Timestamp: 2026-04-09T16:51:34.284641
+Content:
+Generate why-not for: Why is LOC002 not changed?
+Context: {'question': 'Why is LOC002 not changed?'}
+
+Prompt #25
+Type: why_not_response
+Timestamp: 2026-04-09T16:51:34.284656
+Content:
+Generate why-not for: Why is SUP002 not having issues?
+Context: {'question': 'Why is SUP002 not having issues?'}
+
+Prompt #26
+Type: traceability_response
+Timestamp: 2026-04-09T16:51:34.284673
+Content:
+Generate traceability for: Show top contributing records
+Context: {'question': 'Show top contributing records'}
+
+Prompt #27
+Type: traceability_response
+Timestamp: 2026-04-09T16:51:34.284718
+Content:
+Generate traceability for: Which records have changed?
+Context: {'question': 'Which records have changed?'}
+
+Prompt #28
+Type: traceability_response
+Timestamp: 2026-04-09T16:51:34.284746
+Content:
+Generate traceability for: Show me the risky records
+Context: {'question': 'Show me the risky records'}
+
+Prompt #29
+Type: validation
+Timestamp: 2026-04-09T16:51:34.284811
+Content:
+Validate response: Location LOC001 is risky because 2 out of 3 records changed (66.7%)
+Context: {'response': 'Location LOC001 is risky because 2 out of 3 records changed (66.7%)'}
+
+Prompt #30
+Type: validation
+Timestamp: 2026-04-09T16:51:34.284818
+Content:
+Validate response: Location LOC002 is stable because 0 out of 2 records changed (0%)
+Context: {'response': 'Location LOC002 is stable because 0 out of 2 records changed (0%)'}
+
+Prompt #31
+Type: validation
+Timestamp: 2026-04-09T16:51:34.284823
+Content:
+Validate response: The primary driver is forecast changes affecting MAT001
+Context: {'response': 'The primary driver is forecast changes affecting MAT001'}
+
+Prompt #32
+Type: comprehensive_test
+Timestamp: 2026-04-09T16:51:34.284831
+Content:
+Test scenario: Why is LOC001 risky?
+Context: {'question': 'Why is LOC001 risky?', 'expected_type': 'root_cause', 'expected_scope': 'location', 'expected_value': 'LOC001'}
+
+Prompt #33
+Type: comprehensive_test
+Timestamp: 2026-04-09T16:51:34.284857
+Content:
+Test scenario: Compare LOC001 vs LOC002
+Context: {'question': 'Compare LOC001 vs LOC002', 'expected_type': 'comparison', 'expected_scope': 'location', 'expected_value': None}
+
+Prompt #34
+Type: comprehensive_test
+Timestamp: 2026-04-09T16:51:34.284900
+Content:
+Test scenario: Why is LOC002 not risky?
+Context: {'question': 'Why is LOC002 not risky?', 'expected_type': 'why_not', 'expected_scope': 'location', 'expected_value': 'LOC002'}
+
+Prompt #35
+Type: comprehensive_test
+Timestamp: 2026-04-09T16:51:34.284915
+Content:
+Test scenario: Show top contributing records
+Context: {'question': 'Show top contributing records', 'expected_type': 'traceability', 'expected_scope': None, 'expected_value': None}
+
+================================================================================
+RESPONSES FROM AZURE OPENAI
+--------------------------------------------------------------------------------
+
+Response #1
+Prompt ID: 0
+Timestamp: 2026-04-09T16:51:34.283482
+Validation: PASSED
+Content:
+Intent: root_cause, Scope: location=LOC001
+
+Response #2
+Prompt ID: 1
+Timestamp: 2026-04-09T16:51:34.283498
+Validation: PASSED
+Content:
+Intent: comparison, Scope: location=LOC001
+
+Response #3
+Prompt ID: 2
+Timestamp: 2026-04-09T16:51:34.283506
+Validation: PASSED
+Content:
+Intent: why_not, Scope: location=LOC002
+
+Response #4
+Prompt ID: 3
+Timestamp: 2026-04-09T16:51:34.283836
+Validation: PASSED
+Content:
+Intent: traceability, Scope: None=None
+
+Response #5
+Prompt ID: 4
+Timestamp: 2026-04-09T16:51:34.283855
+Validation: PASSED
+Content:
+Intent: summary, Scope: supplier=supplier_HAS
+
+Response #6
+Prompt ID: 5
+Timestamp: 2026-04-09T16:51:34.283863
+Validation: PASSED
+Content:
+Extracted: location=LOC001
+
+Response #7
+Prompt ID: 6
+Timestamp: 2026-04-09T16:51:34.283870
+Validation: PASSED
+Content:
+Extracted: location=LOC001
+
+Response #8
+Prompt ID: 7
+Timestamp: 2026-04-09T16:51:34.283879
+Validation: PASSED
+Content:
+Extracted: supplier=SUP001
+
+Response #9
+Prompt ID: 8
+Timestamp: 2026-04-09T16:51:34.283892
+Validation: PASSED
+Content:
+Extracted: material_group=UPS
+
+Response #10
+Prompt ID: 9
+Timestamp: 2026-04-09T16:51:34.283930
+Validation: PASSED
+Content:
+Metrics: 3 records, 2 changed, 66.7% rate
+
+Response #11
+Prompt ID: 10
+Timestamp: 2026-04-09T16:51:34.283945
+Validation: PASSED
+Content:
+Metrics: 2 records, 0 changed, 0.0% rate
+
+Response #12
+Prompt ID: 11
+Timestamp: 2026-04-09T16:51:34.283959
+Validation: PASSED
+Content:
+Metrics: 1 records, 1 changed, 100.0% rate
+
+Response #13
+Prompt ID: 12
+Timestamp: 2026-04-09T16:51:34.283972
+Validation: PASSED
+Content:
+Metrics: 3 records, 2 changed, 66.7% rate
+
+Response #14
+Prompt ID: 13
+Timestamp: 2026-04-09T16:51:34.283982
+Validation: PASSED
+Content:
+Metrics: 2 records, 0 changed, 0.0% rate
+
+Response #15
+Prompt ID: 14
+Timestamp: 2026-04-09T16:51:34.283993
+Validation: PASSED
+Content:
+Metrics: 3 records, 2 changed, 66.7% rate
+
+Response #16
+Prompt ID: 15
+Timestamp: 2026-04-09T16:51:34.284002
+Validation: PASSED
+Content:
+Metrics: 2 records, 0 changed, 0.0% rate
+
+Response #17
+Prompt ID: 16
+Timestamp: 2026-04-09T16:51:34.284453
+Validation: PASSED
+Content:
+📊 Comparing LOC001 vs LOC002:
+
+**LOC001:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**LOC002:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**Summary:** LOC001 has the same number of changes than LOC002. Both have similar risk profiles.
+
+Response #18
+Prompt ID: 17
+Timestamp: 2026-04-09T16:51:34.284501
+Validation: PASSED
+Content:
+📊 Comparing LOC001 vs LOC003:
+
+**LOC001:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**LOC003:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**Summary:** LOC001 has the same number of changes than LOC003. Both have similar risk profiles.
+
+Response #19
+Prompt ID: 18
+Timestamp: 2026-04-09T16:51:34.284545
+Validation: PASSED
+Content:
+📊 Comparing SUP001 vs SUP002:
+
+**SUP001:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**SUP002:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**Summary:** SUP001 has the same number of changes than SUP002. Both have similar risk profiles.
+
+Response #20
+Prompt ID: 19
+Timestamp: 2026-04-09T16:51:34.284574
+Validation: PASSED
+Content:
+⚠️ Risk Analysis for LOC001:
+
+**What Changed:** 2 records have changed (66.7%)
+
+**Why It's Risky:** the primary driver is quantity changes
+- Change breakdown: quantity: 50.0%, supplier: 50.0%
+
+**Recommended Action:** Review the 2 changed records and prioritize quantity changes.
+
+**Top Contributing Records:** 3 records with largest deltas
+
+Response #21
+Prompt ID: 20
+Timestamp: 2026-04-09T16:51:34.284598
+Validation: PASSED
+Content:
+⚠️ Risk Analysis for LOC003:
+
+**What Changed:** 1 records have changed (100.0%)
+
+**Why It's Risky:** the primary driver is design changes
+- Change breakdown: design: 100.0%
+
+**Recommended Action:** Review the 1 changed records and prioritize design changes.
+
+**Top Contributing Records:** 1 records with largest deltas
+
+Response #22
+Prompt ID: 21
+Timestamp: 2026-04-09T16:51:34.284622
+Validation: PASSED
+Content:
+⚠️ Risk Analysis for SUP001:
+
+**What Changed:** 2 records have changed (66.7%)
+
+**Why It's Risky:** the primary driver is quantity changes
+- Change breakdown: quantity: 50.0%, supplier: 50.0%
+
+**Recommended Action:** Review the 2 changed records and prioritize quantity changes.
+
+**Top Contributing Records:** 3 records with largest deltas
+
+Response #23
+Prompt ID: 22
+Timestamp: 2026-04-09T16:51:34.284639
+Validation: PASSED
+Content:
+✅ Stability Analysis for LOC002:
+
+**Why It's Stable:** no records have changed
+
+This indicates a low-risk, stable planning environment for LOC002.
+
+Response #24
+Prompt ID: 23
+Timestamp: 2026-04-09T16:51:34.284655
+Validation: PASSED
+Content:
+✅ Stability Analysis for LOC002:
+
+**Why It's Stable:** no records have changed
+
+This indicates a low-risk, stable planning environment for LOC002.
+
+Response #25
+Prompt ID: 24
+Timestamp: 2026-04-09T16:51:34.284671
+Validation: PASSED
+Content:
+✅ Stability Analysis for SUP002:
+
+**Why It's Stable:** no records have changed
+
+This indicates a low-risk, stable planning environment for SUP002.
+
+Response #26
+Prompt ID: 25
+Timestamp: 2026-04-09T16:51:34.284716
+Validation: PASSED
+Content:
+📊 Top Contributing Records for this scope:
+
+**Total Records:** 6
+**Top Contributors:** 0 records with largest deltas
+
+No records found.
+
+Response #27
+Prompt ID: 26
+Timestamp: 2026-04-09T16:51:34.284744
+Validation: PASSED
+Content:
+📊 Top Contributing Records for this scope:
+
+**Total Records:** 6
+**Top Contributors:** 0 records with largest deltas
+
+No records found.
+
+Response #28
+Prompt ID: 27
+Timestamp: 2026-04-09T16:51:34.284768
+Validation: PASSED
+Content:
+📊 Top Contributing Records for this scope:
+
+**Total Records:** 6
+**Top Contributors:** 0 records with largest deltas
+
+No records found.
+
+Response #29
+Prompt ID: 28
+Timestamp: 2026-04-09T16:51:34.284816
+Validation: PASSED
+Content:
+Validation: (True, [])
+
+Response #30
+Prompt ID: 29
+Timestamp: 2026-04-09T16:51:34.284821
+Validation: PASSED
+Content:
+Validation: (True, [])
+
+Response #31
+Prompt ID: 30
+Timestamp: 2026-04-09T16:51:34.284825
+Validation: PASSED
+Content:
+Validation: (True, [])
+
+Response #32
+Prompt ID: 31
+Timestamp: 2026-04-09T16:51:34.284855
+Validation: PASSED
+Content:
+Query Type: root_cause, Answer: ⚠️ Risk Analysis for LOC001:
+
+**What Changed:** 2 records have changed (66.7%)
+
+**Why It's Risky:** ...
+
+Response #33
+Prompt ID: 32
+Timestamp: 2026-04-09T16:51:34.284897
+Validation: PASSED
+Content:
+Query Type: comparison, Answer: 📊 Comparing LOC001 vs LOC002:
+
+**LOC001:**
+- Changes: 2 (66.7%)
+- Primary driver: quantity
+
+**LOC002...
+
+Response #34
+Prompt ID: 33
+Timestamp: 2026-04-09T16:51:34.284913
+Validation: PASSED
+Content:
+Query Type: why_not, Answer: ✅ Stability Analysis for LOC002:
+
+**Why It's Stable:** no records have changed
+
+This indicates a low...
+
+Response #35
+Prompt ID: 34
+Timestamp: 2026-04-09T16:51:34.284939
+Validation: PASSED
+Content:
+Query Type: traceability, Answer: 📊 Top Contributing Records for this scope:
+
+**Total Records:** 6
+**Top Contributors:** 0 records wit...
+
+================================================================================
+REAL DATA SUMMARY
+================================================================================
+
+Detail Records: 6
+Locations: LOC001, LOC002, LOC003
+Suppliers: SUP001, SUP002, SUP003
+Material Groups: UPS, PUMP, VALVE
+Materials: MAT001, MAT002, MAT003, MAT004, MAT005, MAT006
+
+Changed Records: 3
+Risky Records: 3
+Stable Records: 3
+
+Planning Health: Critical
+Forecast Delta: 450
+Change Rate: 50.0%

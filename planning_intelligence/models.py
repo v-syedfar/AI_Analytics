@@ -32,6 +32,14 @@ class PlanningRecord:
     created_by: Optional[str] = None           # CREATEDBY
     created_date: Optional[str] = None         # CREATEDDATE
 
+    # --- Pre-computed CSV flags (if present) ---
+    is_new_demand: bool = False                # Is_New Demand
+    is_cancelled: bool = False                 # Is_cancelled
+    risk_flag: Optional[str] = None            # Risk_Flag
+    fcst_delta_qty: Optional[float] = None     # FCST_Delta Qty
+    nbd_delta_days: Optional[float] = None     # NBD_DeltaDays
+    is_supplier_date_missing: bool = False     # Is_SupplierDateMissing
+
     @property
     def key(self) -> tuple:
         return (self.location_id, self.material_group, self.material_id)
@@ -78,6 +86,16 @@ class ComparedRecord:
     qty_delta: Optional[float] = None
     change_type: str = "Unchanged"
     risk_level: str = "Normal"
+
+    # --- Enhanced flags ---
+    is_new_demand: bool = False
+    is_cancelled: bool = False
+    risk_flag: Optional[str] = None
+    fcst_delta_qty: Optional[float] = None
+    nbd_delta_days: Optional[float] = None
+    is_supplier_date_missing: bool = False
+    bod_changed: bool = False
+    ff_changed: bool = False
 
 
 # ---------------------------------------------------------------------------

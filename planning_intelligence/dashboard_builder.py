@@ -136,7 +136,8 @@ def build_dashboard_response(
         "recommendedActions": insights["recommendedActions"],
 
         # Detail
-        "detailRecords": [_slim_record(r) for r in changed],
+        # Include ALL records, not just changed - needed for supplier queries and analysis
+        "detailRecords": [_slim_record(r) for r in compared],
 
         # Filter context
         "filters": {

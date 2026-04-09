@@ -1,0 +1,301 @@
+{
+  "total": 44,
+  "passed": 44,
+  "failed": 0,
+  "categories": {
+    "Supplier Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Comparison Queries": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Record Detail Queries": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Root Cause Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Traceability Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Location Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Material Group Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Forecast/Demand Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Design/BOD Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Schedule/ROJ Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Health/Status Queries": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "Action/Recommendation Queries": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "pass_rate": 100.0
+    }
+  },
+  "tests": [
+    {
+      "category": "Supplier Queries",
+      "prompt": "List suppliers for CYS20_F01C01",
+      "result": "PASS"
+    },
+    {
+      "category": "Supplier Queries",
+      "prompt": "List suppliers for DSM18_F01C01",
+      "result": "PASS"
+    },
+    {
+      "category": "Supplier Queries",
+      "prompt": "Which suppliers at CYS20_F01C01 have design changes?",
+      "result": "PASS"
+    },
+    {
+      "category": "Supplier Queries",
+      "prompt": "Which supplier has the most impact?",
+      "result": "PASS"
+    },
+    {
+      "category": "Comparison Queries",
+      "prompt": "Compare CYS20_F01C01 vs DSM18_F01C01",
+      "result": "PASS"
+    },
+    {
+      "category": "Comparison Queries",
+      "prompt": "Compare CYS20_F01C01 vs AVC11_F01C01",
+      "result": "PASS"
+    },
+    {
+      "category": "Comparison Queries",
+      "prompt": "Compare UPS vs MVSXRM",
+      "result": "PASS"
+    },
+    {
+      "category": "Record Detail Queries",
+      "prompt": "What changed for C00000560-001?",
+      "result": "PASS"
+    },
+    {
+      "category": "Record Detail Queries",
+      "prompt": "What changed for C00000560-001 at CYS20_F01C01?",
+      "result": "PASS"
+    },
+    {
+      "category": "Record Detail Queries",
+      "prompt": "Show current vs previous for C00000560-001",
+      "result": "PASS"
+    },
+    {
+      "category": "Root Cause Queries",
+      "prompt": "Why is CYS20_F01C01 risky?",
+      "result": "PASS"
+    },
+    {
+      "category": "Root Cause Queries",
+      "prompt": "Why is DSM18_F01C01 not risky?",
+      "result": "PASS"
+    },
+    {
+      "category": "Root Cause Queries",
+      "prompt": "Why is planning health critical?",
+      "result": "PASS"
+    },
+    {
+      "category": "Root Cause Queries",
+      "prompt": "What is driving the risk?",
+      "result": "PASS"
+    },
+    {
+      "category": "Traceability Queries",
+      "prompt": "Show top contributing records",
+      "result": "PASS"
+    },
+    {
+      "category": "Traceability Queries",
+      "prompt": "Which records have the most impact?",
+      "result": "PASS"
+    },
+    {
+      "category": "Traceability Queries",
+      "prompt": "Show records with design changes",
+      "result": "PASS"
+    },
+    {
+      "category": "Traceability Queries",
+      "prompt": "Which records are highest risk?",
+      "result": "PASS"
+    },
+    {
+      "category": "Location Queries",
+      "prompt": "Which locations have the most changes?",
+      "result": "PASS"
+    },
+    {
+      "category": "Location Queries",
+      "prompt": "Which locations need immediate attention?",
+      "result": "PASS"
+    },
+    {
+      "category": "Location Queries",
+      "prompt": "What changed at DSM18_F01C01?",
+      "result": "PASS"
+    },
+    {
+      "category": "Location Queries",
+      "prompt": "Which locations are change hotspots?",
+      "result": "PASS"
+    },
+    {
+      "category": "Material Group Queries",
+      "prompt": "Which material groups changed the most?",
+      "result": "PASS"
+    },
+    {
+      "category": "Material Group Queries",
+      "prompt": "What changed in UPS?",
+      "result": "PASS"
+    },
+    {
+      "category": "Material Group Queries",
+      "prompt": "Which material groups have design changes?",
+      "result": "PASS"
+    },
+    {
+      "category": "Material Group Queries",
+      "prompt": "Which material groups are most impacted?",
+      "result": "PASS"
+    },
+    {
+      "category": "Forecast/Demand Queries",
+      "prompt": "Why did forecast increase by +50,980?",
+      "result": "PASS"
+    },
+    {
+      "category": "Forecast/Demand Queries",
+      "prompt": "Where are we seeing new demand surges?",
+      "result": "PASS"
+    },
+    {
+      "category": "Forecast/Demand Queries",
+      "prompt": "Is this demand-driven or design-driven?",
+      "result": "PASS"
+    },
+    {
+      "category": "Forecast/Demand Queries",
+      "prompt": "Show forecast trends",
+      "result": "PASS"
+    },
+    {
+      "category": "Design/BOD Queries",
+      "prompt": "Which materials have BOD changes?",
+      "result": "PASS"
+    },
+    {
+      "category": "Design/BOD Queries",
+      "prompt": "Which materials have Form Factor changes?",
+      "result": "PASS"
+    },
+    {
+      "category": "Design/BOD Queries",
+      "prompt": "Any design changes at CYS20_F01C01?",
+      "result": "PASS"
+    },
+    {
+      "category": "Design/BOD Queries",
+      "prompt": "Which supplier has the most design changes?",
+      "result": "PASS"
+    },
+    {
+      "category": "Schedule/ROJ Queries",
+      "prompt": "Which locations have ROJ delays?",
+      "result": "PASS"
+    },
+    {
+      "category": "Schedule/ROJ Queries",
+      "prompt": "Which supplier is failing to meet ROJ dates?",
+      "result": "PASS"
+    },
+    {
+      "category": "Schedule/ROJ Queries",
+      "prompt": "Are there ROJ delays at DSM18_F01C01?",
+      "result": "PASS"
+    },
+    {
+      "category": "Schedule/ROJ Queries",
+      "prompt": "Show schedule changes",
+      "result": "PASS"
+    },
+    {
+      "category": "Health/Status Queries",
+      "prompt": "What is the current planning health?",
+      "result": "PASS"
+    },
+    {
+      "category": "Health/Status Queries",
+      "prompt": "Why is planning health at 37/100?",
+      "result": "PASS"
+    },
+    {
+      "category": "Health/Status Queries",
+      "prompt": "What is the risk level?",
+      "result": "PASS"
+    },
+    {
+      "category": "Health/Status Queries",
+      "prompt": "Show KPI summary",
+      "result": "PASS"
+    },
+    {
+      "category": "Action/Recommendation Queries",
+      "prompt": "What are the top planner actions?",
+      "result": "PASS"
+    },
+    {
+      "category": "Action/Recommendation Queries",
+      "prompt": "What should be done for CYS20_F01C01?",
+      "result": "PASS"
+    }
+  ]
+}
